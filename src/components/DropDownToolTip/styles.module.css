@@ -1,0 +1,95 @@
+@import "../../../styles//typography.css";
+
+.dropDownWrappper {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 14px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.2));
+  top: 35px;
+  z-index: 100;
+  min-width: 165px;
+}
+
+.dropDownWrappper::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0px;
+  top: 1px;
+  border: 8px solid transparent;
+  border-top: 0;
+  border-bottom: 8px solid white;
+  transform: translateY(calc(-100%));
+}
+
+.dropDownOption {
+  display: flex;
+  width: 100%;
+  padding: 16px 2px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.dropDownOption:not(:last-child) {
+  border-bottom: 1px solid #a3aab1;
+}
+
+.dropDownIcon {
+  margin-bottom: 0;
+  margin-right: 8px;
+  width: 28px;
+  height: 28px;
+}
+
+.dropDownLabel {
+  font-family: "AvertaStdCY-Regular";
+  font-size: 16px;
+}
+
+/* For mobile screens */
+@media only screen and (max-width: 600px) {
+  .dropDownWrappper::before {
+    right: 12%;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 375px) {
+  .dropDownWrappper {
+    top: 32px;
+    min-width: 124px;
+    padding: 0 8px;
+    right: -10px;
+  }
+  .dropDownLabel {
+    font-size: 12px;
+  }
+  .dropDownOption {
+    display: flex;
+    width: 100%;
+    padding: 10px 2px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  .dropDownWrappper {
+    top: 33px;
+    min-width: 135px;
+    padding: 0 8px;
+    right: -10px;
+  }
+  .dropDownLabel {
+    font-size: 14px;
+  }
+  .dropDownOption {
+    display: flex;
+    width: 100%;
+    padding: 10px 2px;
+    cursor: pointer;
+  }
+}

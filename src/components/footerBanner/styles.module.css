@@ -1,0 +1,47 @@
+.bannerContainer {
+  position: relative;
+  /* display: inline-block; */
+  height: 0;
+  padding-bottom: 27.222222222%;
+  width: 100%;
+}
+
+.bannerTextWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'AvertaStdCY-Bold';
+  position: absolute;
+  top: 11.75vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 50vw;
+  height: 10vw;
+}
+
+.bannerText {
+  text-align: center;
+  color: #858585;
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'AvertaStdCY-Bold';
+  font-size: 2.5vw;
+  line-height: 44px;
+  letter-spacing: 0.14em;
+}
+@media only screen and (max-width: 700px) {
+  .bannerTextWrapper {
+    top: 48%;
+    width: 96%;
+  }
+  .bannerText {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .bannerContainer {
+    padding-bottom: 39.733333333%;
+  }
+}

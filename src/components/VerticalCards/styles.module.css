@@ -1,0 +1,128 @@
+@import "../../../styles/typography.css";
+
+.cardContainerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.cardContainer {
+  width: 23%;
+  display: block;
+  min-width: 325px;
+  background: white;
+  margin: 60px 8px 20px 8px;
+}
+
+.cardInnerWrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1),
+    0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.cardIconWrapperImage {
+  width: 100%;
+  height: 0;
+  display: block;
+  position: relative;
+  padding-bottom: 42.537313432%;
+}
+
+.pharmacyImageWrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.comingSoonContainer {
+  background: url(../../../public/images/coming-soon-background.png);
+  background-position: center;
+  background-size: cover;
+  width: 268px;
+  height: 114px;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comingSoon {
+  color: #646b72;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: "AvertaStdCY-Regular";
+}
+
+.cardTextWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-top: -48px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+}
+
+.cardHeaderText {
+  font-family: "AvertaStdCY-Bold";
+  letter-spacing: 2.43px;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #465059;
+}
+
+.cardText {
+  letter-spacing: 1px;
+  color: #646b72;
+  margin-top: 1rem;
+  font-family: "AvertaStdCY-Regular";
+}
+
+.cardSubText {
+  letter-spacing: 1px;
+  font-family: "AvertaStdCY-Regular";
+  color: #646b72;
+}
+
+.cardIconWrapper {
+  padding-bottom: 24px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.cardHeaderWrapper {
+  height: 50px;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 650px) {
+  .cardContainer {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 1115px) {
+  .cardContainer {
+    max-width: 430px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cardText {
+    font-size: 1rem;
+  }
+  .cardHeaderText {
+    font-size: 22px;
+  }
+  .cardContainerWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

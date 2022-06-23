@@ -1,0 +1,35 @@
+.sectionTitle {
+  font-size: 26px;
+  font-family: "AvertaStdCY-Bold";
+  color: #0795ff;
+  letter-spacing: 4px;
+  line-height: 30px;
+  margin: 12px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sectionText {
+  font-family: "AvertaStdCY-Regular";
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+@media only screen and (min-width: 600px) {
+  .sectionText {
+    margin-bottom: 49px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sectionTitle {
+    letter-spacing: 2px;
+  }
+}

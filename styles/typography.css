@@ -1,0 +1,19 @@
+
+
+ @font-face {
+    font-family: "AvertaStdCY-Regular";
+    src: url("../fonts/AvertaStdCY-Regular.otf");
+    font-display: fallback;
+  }
+  
+  @font-face {
+    font-family: "AvertaStdCY-Bold";
+    src: url("../fonts/AvertaStdCY-Bold.otf");
+    font-display: fallback;
+  }
+  
+  @font-face {
+    font-family: "Graphik-Demibold";
+    src: url("../fonts/Direction-Graphik-Bold.otf");
+    font-display: fallback;
+  }

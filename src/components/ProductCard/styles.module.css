@@ -1,0 +1,63 @@
+.zaloSkuImages {
+  width: 100%;
+  height: 50%;
+  transform: scale(1.07);
+  display: block;
+  position: relative;
+}
+.productCardWrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+
+.ProductCardLabel {
+  position: absolute;
+  bottom: 35%;
+  color: #0795ff;
+  font-size: 11px;
+  line-height: 150%;
+  font-family: "AvertaStdCY-Regular";
+}
+
+@media (max-width: 930px) {
+  .productCardContainer {
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .productCardContainer {
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 873px) {
+  .productCardContainer {
+    margin: 8px 8px;
+  }
+  .productCardLongLine {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .productCardContainer {
+    height: 85px;
+    margin: 3px 0;
+    width: 99%;
+  }
+  .productCardLongLine {
+    margin-bottom: 5px;
+  }
+  .productCardProductDetails {
+    margin-top: 9px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1010px) {
+  .productCardContainer {
+    height: 75px;
+    margin: 12px 10px;
+  }
+}

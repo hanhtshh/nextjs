@@ -1,0 +1,68 @@
+.rowMobileMenu {
+    border-bottom: 1px solid #eeeff0;
+  }
+  .wrapClose {
+    display: flex;
+    justify-content: flex-end;
+    font-family: "AvertaStdCY-Regular";
+    font-size: 14px;
+    text-transform: uppercase;
+    align-items: center;
+    color: #465059;
+    padding: 15px 32px;
+    letter-spacing: 2px;
+  }
+  
+  .wrapMenuContent {
+    padding: 0 16px;
+  }
+  .wrapMemuItem {
+    border-top: 1px solid #eeeff0;
+    padding: 15px 0;
+    font-family: "AvertaStdCY-Regular";
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #465059;
+    display: flex;
+    align-items: center;
+  }
+  .wrapMemuItemApp {
+    border-top: 1px solid #eeeff0;
+    padding: 15px 0;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+  }
+  .menuTitle {
+    font-family: "AvertaStdCY-Semibold";
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 24px 0;
+    letter-spacing: 2px;
+    color: #465059;
+  }
+  .itemList {
+    padding-left: 48px;
+  }
+  .zaloApp {
+    font-family: "AvertaStdCY";
+    color: #286af6;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .mobileApp {
+    font-family: "AvertaStdCY-Regular";
+    color: #465059;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .menuImage {
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+    display: block;
+    position: relative;
+  }
+  

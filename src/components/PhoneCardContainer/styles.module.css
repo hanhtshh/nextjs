@@ -1,0 +1,248 @@
+@import "../../../styles//typography.css";
+
+.phoneCardContainer {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #dbf0ff;
+  padding: 10rem 10rem 2rem 10rem;
+  z-index: 4;
+  width: 100%;
+  max-width: 1920px;
+}
+.zaloFeaturesWrapper {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  width: 60%;
+  position: relative;
+  padding-bottom: 5rem;
+}
+.valueIcon {
+  width: 140px;
+  height: 140px;
+  margin-top: 25px;
+  display: block;
+  position: relative;
+  top: -50px;
+}
+
+.phoneCardsWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  margin: 250px 0 150px 0;
+}
+
+.phoneFrameWrapper {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  z-index: 4;
+}
+
+.featureCardContianer {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.featureCard {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.featureCardTextWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 16px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+}
+
+.featureCardHeading {
+  font-family: "AvertaStdCY-Bold";
+  letter-spacing: 2.43px;
+  text-transform: uppercase;
+  font-size: 60px;
+  color: #0795ff;
+  letter-spacing: 4px;
+  line-height: 120%;
+}
+
+.featureCardText {
+  letter-spacing: 1px;
+  color: #0795ff;
+  margin-top: 1.5rem;
+  font-size: 24px;
+  font-family: "AvertaStdCY-Regular";
+  line-height: 150%;
+  letter-spacing: 1px;
+  max-width: 80%;
+}
+
+@media (max-width: 700px) {
+  .phoneCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phoneCardsWrapper {
+    margin-bottom: 32px;
+  }
+  .phoneFrameWrapper {
+    margin-bottom: 15%;
+  }
+}
+.BuyOnZaloWrapper {
+  display: inline-flex;
+  width: fit-content;
+  padding: 1rem;
+  margin: 3rem 6rem 12rem 9.5rem;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  /* Drop Shadow / Strong Shadow */
+
+  box-shadow: 0px 10px 40px rgba(103, 128, 155, 0.4);
+  border-radius: 200px;
+}
+.fixZaloButton {
+  position: sticky;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(219, 240, 255, 0) 0%,
+    #dbf0ff 19.57%
+  );
+  z-index: 3;
+  left: 84px;
+  margin-top: 2rem;
+  display: none;
+}
+
+.buyOnZaloText {
+  color: #286af6;
+  letter-spacing: 0.8px;
+  font-family: "AvertaStdCY-Bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 0 20px 0 0;
+  white-space: nowrap;
+}
+.headerIcons {
+  margin: 0 10px 0 20px;
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: relative;
+}
+
+@media (min-width: 700px) and (max-width: 849px) {
+  .phoneCardContainer {
+    padding: 8rem 3rem;
+  }
+  .BuyOnZaloWrapper {
+    margin: 3rem 3rem 11rem 7rem;
+  }
+  .featureCardHeading {
+    font-size: 33px;
+  }
+  .featureCardText {
+    font-size: 14px;
+  }
+  .phoneCardsWrapper {
+    margin: 100px 0 100px 0;
+  }
+  .valueIcon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: block;
+  }
+}
+@media (min-width: 850px) and (max-width: 1024px) {
+  .phoneCardContainer {
+    padding: 8rem 3rem 2rem 3rem;
+  }
+  .BuyOnZaloWrapper {
+    margin: 3rem 5rem 11rem 9.5rem;
+  }
+  .featureCardHeading {
+    font-size: 45px;
+  }
+  .featureCardText {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .phoneCardsWrapper {
+    margin: 250px 0 50px 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1250px) {
+  .phoneCardContainer {
+    padding: 10rem 5rem 2rem 5rem;
+  }
+  .BuyOnZaloWrapper {
+    margin: 3rem 5rem 12rem 9.5rem;
+  }
+}
+@media (min-width: 850px) and (max-width: 1024px) {
+  .phoneCardsWrapper {
+    margin: 150px 0 100px 0;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .phoneCardsWrapper {
+    margin: 50px 0 100px 0;
+  }
+  .phoneCardContainer {
+    padding: 10rem 5rem 10rem 5rem;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+  .featureCardHeading {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .featureCardHeading {
+    font-size: 45px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1300px) and (min-height: 700px) and (max-height: 800px) {
+  .phoneCardContainer {
+    padding: 5rem 5rem 10rem 5rem;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1400px) and (min-height: 650px) and (max-height: 800px) {
+  .phoneCardContainer {
+    padding: 4rem 10rem 2rem 10rem;
+  }
+  .BuyOnZaloWrapper {
+    margin: 5rem 5rem 10rem 9.5rem;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1400px) and (min-height: 600px) and (max-height: 650px) {
+  .phoneCardContainer {
+    padding: 4rem 10rem 2rem 10rem;
+  }
+  .BuyOnZaloWrapper {
+    margin: 7rem 5rem 10rem 9.5rem;
+  }
+}

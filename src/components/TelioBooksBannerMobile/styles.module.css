@@ -1,0 +1,90 @@
+.telioBooksBannerSection {
+  background: #dbf0ff;
+  width: 100%;
+  min-height: 526px;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 12px;
+  align-items: center;
+}
+.telioBooksBannerBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.telioBooksBannerContentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.telioBooksBannerBottomCrimp {
+  height: 40px;
+  width: 100%;
+}
+.telioBooksBannerBooksLogo {
+  width: 140px;
+  height: 140px;
+  display: block;
+  position: relative;
+}
+.telioBooksBannerPhoneFrame {
+  margin-bottom: 15px;
+  background: url(../../../public/images/Phoneframe.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 534px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.telioBooksBannerBooksScreen {
+  bottom: 9px;
+  height: 465px;
+  width: 240px;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.telioBooksBannerStoreLogoContainer {
+  display: flex;
+}
+.telioBooksBannerAppStoreLogo {
+  width: 150px;
+  height: 45px;
+  display: block;
+  position: relative;
+}
+.telioBooksBannerPlayStoreLogo {
+  width: 150px;
+  height: 45px;
+  margin-right: 15px;
+  position: relative;
+  display: block;
+}
+.telioBooksBannerText {
+  font-size: 16px;
+  font-family: "AvertaStdCY-Regular";
+  color: #0795ff;
+  font-weight: bold;
+  letter-spacing: 2.4px;
+  line-height: 22px;
+  margin: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 320px) {
+  .telioBooksBannerAppStoreLogo {
+    width: 130px;
+    height: 40px;
+  }
+  .telioBooksBannerPlayStoreLogo {
+    width: 135px;
+    height: 40px;
+  }
+}

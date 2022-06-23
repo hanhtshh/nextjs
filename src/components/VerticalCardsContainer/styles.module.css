@@ -1,0 +1,62 @@
+@import "../../../styles//typography.css";
+
+.verticalCardsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.verticalCardsContainerHeader {
+  font-family: "AvertaStdCY-Bold";
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 26px;
+  line-height: 28px;
+  font-style: normal;
+  color: #0795ff;
+  margin: 16px 0;
+  padding: 20px 0;
+}
+
+.oneshopTitleWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1023px) {
+  .verticalCardsContainer {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .verticalCardsContainerHeader {
+    margin: 80px 70px 10px;
+  }
+}
+@media only screen and (min-width: 415px) and (max-width: 500px) {
+  .verticalCardsContainerHeader {
+    margin: 80px 40px 10px;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 415px) {
+  .verticalCardsContainerHeader {
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .verticalCardsContainerHeader {
+    margin: 80px 0px 10px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .verticalCardsContainer {
+    height: 80vh;
+  }
+}

@@ -1,0 +1,181 @@
+.zaloDownloadContainer button {
+  background-color: white;
+  border: none;
+}
+.zaloDownloadContainer {
+  background-color: white;
+  box-shadow: 0px 10px 40px rgba(103, 128, 155, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "AvertaStdCY-Regular";
+  line-height: 150%;
+  letter-spacing: 0.8px;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+.zaloDownloadSubContainer {
+  padding: 15px 0;
+  width: 90%;
+  text-align: center;
+}
+.visitZaloContainer {
+  border-bottom: #a3aab1 solid 0.5px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+.zaloDownloadIcon {
+  height: 21px;
+  width: 21px;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -2px;
+}
+.zaloDownloadVisitZalo {
+  color: #286af6;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  vertical-align: middle;
+}
+.zaloDownloadAppDownload {
+  color: #1e2e3d;
+  font-size: 16px;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.downloadAppContainer {
+  position: relative;
+}
+.downloadAppButton {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+}
+.downloadAppButton:hover {
+  cursor: pointer;
+}
+.storesContainer {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  width: 100%;
+  bottom: 16px;
+}
+.mobileStores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.store {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.store:first-child {
+  border-right: 0.5px solid #a3aab1;
+}
+.dropdownContainer {
+  position: absolute;
+  left: 15%;
+  top: 3px;
+  display: none;
+}
+.heroSubText {
+  font-family: "AvertaStdCY-Bold";
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: -3rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 700px) {
+  .zaloDownloadSubContainer {
+    width: auto;
+    padding: 5px 0;
+  }
+  .visitZaloContainer {
+    padding-right: 30px;
+    border-right: #a3aab1 solid 0.5px;
+    border-bottom: none;
+  }
+  .downloadAppButton {
+    padding-left: 30px;
+  }
+  .zaloDownloadIcon {
+    height: 25px;
+    width: 25px;
+  }
+  .zaloDownloadVisitZalo {
+    font-size: 18px;
+  }
+  .zaloDownloadAppDownload {
+    font-size: 18px;
+  }
+  .dropdownContainer {
+    display: block;
+  }
+  .mobileStores {
+    display: none;
+  }
+}
+
+/* @media only screen and (min-width: 600px) and (max-width: 720px) {
+    .zaloDownloadContainer {
+        border-radius: 200px;
+        flex-direction: row;
+        padding: 25px 50px;
+        width: 70%;
+        white-space: nowrap;
+    }
+} */
+@media only screen and (min-width: 720px) and (max-width: 900px) {
+  .zaloDownloadContainer {
+    border-radius: 200px;
+    flex-direction: row;
+    padding: 25px 50px;
+    width: 55%;
+    white-space: nowrap;
+  }
+  .dropdownContainer {
+    left: 5%;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1249px) {
+  .zaloDownloadContainer {
+    border-radius: 200px;
+    flex-direction: row;
+    padding: 25px 50px;
+    width: 45%;
+    white-space: nowrap;
+  }
+  .dropdownContainer {
+    left: 10%;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .zaloDownloadContainer {
+    border-radius: 200px;
+    flex-direction: row;
+    padding: 25px 50px;
+    width: 33%;
+    white-space: nowrap;
+  }
+}

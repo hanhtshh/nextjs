@@ -1,0 +1,51 @@
+.mapLottieContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  max-width: 1920px;
+  justify-content: flex-end;
+}
+.lottiePlayerWrapper {
+  height: 81vh;
+  width: 100%;
+  padding: 16vh 0;
+}
+
+.mapHeader {
+  font-family: "AvertaStdCY-Bold";
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 26px;
+  line-height: 30px;
+  font-style: normal;
+  color: #0795ff;
+  margin-top: 150px;
+}
+.mobileMapWrapper {
+  padding: 3rem 0;
+  width: 100%;
+}
+.mapImage {
+  height: 0;
+  width: 100%;
+  padding-bottom: 141.7%;
+  margin: 2rem 0;
+  display: block;
+  position: relative;
+}
+.headerContainer {
+  padding: 0px 10px;
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  .mapHeader {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .mapLottieContainer {
+    margin-top: 80px;
+  }
+}
