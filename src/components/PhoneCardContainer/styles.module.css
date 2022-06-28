@@ -2,20 +2,24 @@
 
 .phoneCardContainer {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   box-sizing: border-box;
   height: 100%;
   background-color: #dbf0ff;
   padding: 10rem 10rem 2rem 10rem;
   z-index: 4;
   width: 100%;
-  max-width: 1920px;
+  position: relative;
+}
+.phoneCardContainer.show{
+
 }
 .zaloFeaturesWrapper {
   display: flex;
+  align-items: center;
   flex-direction: column;
   -webkit-box-pack: end;
-  justify-content: flex-end;
+  justify-content: center;
   width: 60%;
   position: relative;
   padding-bottom: 5rem;
@@ -42,6 +46,13 @@
   width: 40%;
   height: 100%;
   z-index: 4;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.phoneFrameWrapper.show{
+  position: fixed;
+  top:140px;
 }
 
 .featureCardContianer {
@@ -105,10 +116,9 @@
   }
 }
 .BuyOnZaloWrapper {
-  display: inline-flex;
+  display: flex;
   width: fit-content;
   padding: 1rem;
-  margin: 3rem 6rem 12rem 9.5rem;
   justify-content: center;
   align-items: center;
   background: #ffffff;
@@ -117,18 +127,26 @@
   box-shadow: 0px 10px 40px rgba(103, 128, 155, 0.4);
   border-radius: 200px;
 }
+.BuyOnZaloWrapperBox{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
 .fixZaloButton {
-  position: sticky;
+  position: absolute;
   width: 100%;
+  height: 300px;
   background: linear-gradient(
     180deg,
     rgba(219, 240, 255, 0) 0%,
     #dbf0ff 19.57%
   );
   z-index: 3;
-  left: 84px;
+  left: 0;
   margin-top: 2rem;
-  display: none;
+}
+.fixZaloButton.show{
+  position: fixed;
 }
 
 .buyOnZaloText {

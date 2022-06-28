@@ -15,17 +15,19 @@ const TelioZaloApp = () => {
           id="value-proposition1"
         >
           <div className={styles.zaloWrapper}>
-            <WrapImage
-              desktop={{
-                src: isVietnamese
-                  ? "/images/value1-banner-vi.png"
-                  : "/images/value1-banner-en.png",
-                alt: "",
-                className: `${styles.productSkuWrapper} zalo-phone-sku-wrapper`,
-                layout:"fill",
-                objectFit:"cover"
-              }}
-            />
+            <div className={styles.productSkuWrapperBox}>
+              <WrapImage
+                desktop={{
+                  src: isVietnamese
+                    ? "/images/value1-banner-vi.png"
+                    : "/images/value1-banner-en.png",
+                  alt: "",
+                  className: `${styles.productSkuWrapper} zalo-phone-sku-wrapper`,
+                  layout: "fill",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
             <div className={styles.productCards}>
               <ProductCard />
             </div>
@@ -42,8 +44,8 @@ const TelioZaloApp = () => {
                 : "/images/value2-en.png",
               alt: "phone-frame",
               className: styles.mobileFrame,
-              layout:"fill",
-              objectFit:"cover"
+              layout: "fill",
+              objectFit: "cover",
             }}
           />
         </div>
@@ -56,8 +58,8 @@ const TelioZaloApp = () => {
               src: "/images/value3.png",
               alt: "phone-frame",
               className: styles.mobileFrame,
-              layout:"fill",
-              objectFit:"cover"
+              layout: "fill",
+              objectFit: "cover",
             }}
           />
         </div>

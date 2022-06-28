@@ -5,14 +5,16 @@
 import React, { useEffect, useState } from "react";
 
 import styles from "./styles.module.css";
-import Image from "next/image";
 import { T } from "../../hooks/translation";
 import MobileMenu from "../MobileMenu";
 import { WrapImage } from "../WrapImage";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
-const FixedHeaderMobile = () => {
+type FixedHeaderMobileProps = {
+  showHeader: boolean;
+};
+const FixedHeaderMobile = ({ showHeader }: FixedHeaderMobileProps) => {
   const [showDrawer, setShowDrawer] = useState(false);
   const toggleDrawer = (open: any) => (event: any) => {
     if (
@@ -24,43 +26,9 @@ const FixedHeaderMobile = () => {
     }
     setShowDrawer(open);
   };
-
-  useEffect(() => {
-    ScrollTrigger.matchMedia({
-      // large
-      "(max-width: 700px)": function () {
-        // setup animations and ScrollTriggers for screens 960px wide or greater...
-        // These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
-        const fixedHeadeMobileAnimationScroll1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".main-page-container",
-            id: "fixed-header-mobile",
-            scrub: true,
-            endTrigger: ".main-page-container",
-            end: "top -=70",
-            start: "top top",
-          },
-        });
-        fixedHeadeMobileAnimationScroll1
-          .from(".fixed-header-mobile-container", {
-            y: -200,
-            duration: 3,
-          })
-          .to(".fixed-header-mobile-container", {
-            position: "fixed",
-            display: "flex",
-            top: "2px",
-            duration: 3,
-            zIndex: 18,
-          });
-      },
-    });
-  }, []);
-
+  const show = showHeader ? styles.show : "";
   return (
-    <div
-      className={`${styles.fixedHeaderMobileContainer} fixed-header-mobile-container`}
-    >
+    <div className={`${styles.fixedHeaderMobileContainer} ${show} `}>
       <MobileMenu
         showDrawer={showDrawer}
         toggleDrawer={toggleDrawer}

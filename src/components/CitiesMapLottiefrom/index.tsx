@@ -13,7 +13,6 @@ const CitiesMapLottie = () => {
   const lottieRef = useRef<any>(null);
   const [showMap, setShowMap] = useState(false);
   const [url, setUrl] = useState("");
-  console.log("ok");
   useEffect(() => {
     setUrl(
       `https://assets5.lottiefiles.com/private_files/lf30_qbtoxcez.json?version=${Math.random()}`

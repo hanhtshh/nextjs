@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { isIOS, isAndroid } from "react-device-detect";
 import styles from "./styles.module.css";
 import {
@@ -10,41 +10,16 @@ import {
 import { T } from "../../hooks/translation";
 import DropDownToolTip from "../DropDownToolTip";
 import { stores } from "../../constants";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { WrapImage } from "../WrapImage";
 const { useState, useCallback } = React;
 
 // eslint-disable-next-line react/prop-types
-const ZaloDownload = ({ selector }: any) => {
+type ZaloDownloadProps = {
+  setShowHeader: any;
+};
+const ZaloDownload = ({ setShowHeader }: ZaloDownloadProps) => {
   const [showStores, setShowStores] = useState(false);
-
-  useEffect(() => {
-    ScrollTrigger.matchMedia({
-      // large
-      "(max-width: 700px)": function () {
-        gsap.set("#offers-text", {
-          top: "-3rem",
-        });
-        gsap.to("#offers-text", {
-          scrollTrigger: {
-            trigger: "#offers-text",
-            toggleActions: "play pause play reverse",
-            start: "top center+=70px",
-          },
-          opacity: 0,
-          duration: 0.1,
-        });
-      },
-      // small
-      "(max-width: 599px)": function () {
-        // The ScrollTriggers created inside these functions are segregated and get
-        // reverted/killed when the media query doesn't match anymore.
-      },
-    });
-  }, []);
-
+  const zaloDownloadRef = useRef<any>(null);
   const onAppDownloadClick = useCallback(() => {
     if (isIOS) {
       openTelioAppAppStore();
@@ -68,8 +43,24 @@ const ZaloDownload = ({ selector }: any) => {
     setShowStores(false);
   }, []);
 
+  const handleScroll = () => {
+    if (zaloDownloadRef.current) {
+      let rect = zaloDownloadRef.current.getBoundingClientRect();
+      if (rect.bottom - 58 < 0) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
-    <div className={`${styles.zaloDownloadContainer} ${selector}`}>
+    <div className={`${styles.zaloDownloadContainer} `} ref={zaloDownloadRef}>
       <span className={styles.heroSubText} id="offers-text">
         {T("title.heroBannerSubTitle")}
       </span>
@@ -78,12 +69,14 @@ const ZaloDownload = ({ selector }: any) => {
         className={`${styles.zaloDownloadSubContainer} ${styles.visitZaloContainer}`}
         onClick={openTelioZalo}
       >
-        <Image
-          src={"/images/zalo-logo.png"}
-          alt=""
-          className={styles.zaloDownloadIcon}
-          height={0}
-          width={0}
+        <WrapImage
+          desktop={{
+            src: "/images/zalo-logo.png",
+            alt: "",
+            layout: "fill",
+            objectFit: "cover",
+            className: styles.zaloDownloadIcon,
+          }}
         />
         <span className={styles.zaloDownloadVisitZalo}>
           {T("fixedHeader.telioZaloStore")}
@@ -97,12 +90,14 @@ const ZaloDownload = ({ selector }: any) => {
           className={styles.downloadAppButton}
           onClick={onAppDownloadClick}
         >
-          <Image
-            height={0}
-            width={0}
-            src={"/images/download.svg"}
-            alt=""
-            className={styles.zaloDownloadIcon}
+          <WrapImage
+            desktop={{
+              src: "/images/download.svg",
+              alt: "",
+              layout: "fill",
+              objectFit: "cover",
+              className: styles.zaloDownloadIcon,
+            }}
           />
           <span className={styles.zaloDownloadAppDownload}>
             {T("zaloApp.download")}
@@ -116,12 +111,14 @@ const ZaloDownload = ({ selector }: any) => {
                 type="button"
                 onClick={openTelioAppAppStore}
               >
-                <Image
-                  height={0}
-                  width={0}
-                  src={"/images/appStoreIcon.svg"}
-                  alt=""
-                  className={styles.zaloDownloadIcon}
+                <WrapImage
+                  desktop={{
+                    src: "/images/appStoreIcon.svg",
+                    alt: "",
+                    layout: "fill",
+                    objectFit: "cover",
+                    className: styles.zaloDownloadIcon,
+                  }}
                 />
                 <span>{T("zaloApp.forIOS")}</span>
               </button>
@@ -130,12 +127,14 @@ const ZaloDownload = ({ selector }: any) => {
                 type="button"
                 onClick={openTelioAppPlayStore}
               >
-                <Image
-                  height={0}
-                  width={0}
-                  src={"/images/playStoreIcon.svg"}
-                  alt=""
-                  className={styles.zaloDownloadIcon}
+                <WrapImage
+                  desktop={{
+                    src: "/images/playStoreIcon.svg",
+                    alt: "",
+                    className: styles.zaloDownloadIcon,
+                    objectFit: "cover",
+                    layout: "fill",
+                  }}
                 />
                 <span>{T("zaloApp.forAndroid")}</span>
               </button>

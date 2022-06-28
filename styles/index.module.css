@@ -10,15 +10,12 @@
     position: fixed;
     top: 0;
     width: calc(100% - 1px);
-    max-width: 1920px;
   }
   .mainPgaeContentWrapper {
     position: absolute;
     background-color: #FFFFFF;
     top: 100vh;
     width: 100%;
-    width: 100%;
-    max-width: 1920px;
     left: 0;
     margin: 0 auto;
   }

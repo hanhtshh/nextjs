@@ -24,7 +24,7 @@
   text-align: center;
 }
 .visitZaloContainer {
-  border-bottom: #a3aab1 solid 0.5px;
+  border-bottom: #a3aab1 solid 0.5px !important;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
@@ -34,6 +34,7 @@
   margin: 0 10px 0 0;
   vertical-align: middle;
   display: inline-block;
+  position: relative;
   margin-top: -2px;
 }
 .zaloDownloadVisitZalo {

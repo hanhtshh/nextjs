@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/index.module.css";
 // import Layout from '../components/layout';
 // import Seo from '../components/seo';
@@ -46,8 +46,12 @@ const DynamicFixedHeader = dynamic(
     ssr: false,
   }
 );
+const DynamicProduct = dynamic(() => import("../src/components/Products"), {
+  ssr: false,
+});
 const IndexPage = () => {
   const width = useWindowWidth();
+  const [showHeader, setShowHeader] = useState(false);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger); // Register scroll trigger with gsap to avoid tree shaking.
 
@@ -71,15 +75,15 @@ const IndexPage = () => {
           {width && width <= 700 && (
             <>
               {/* <div className={`${styles.fixedHeaderDummyPadding} dummy-fixed-header`} /> */}
-              <FixedHeaderMobile />
+              <FixedHeaderMobile showHeader={showHeader} />
 
               <div className={styles.topAdjuster}>
-                <ZaloDownload />
+                <ZaloDownload setShowHeader={setShowHeader} />
               </div>
             </>
           )}
           <VerticalCardsContainer />
-          <Products />
+          <DynamicProduct />
 
           <div className="zalo-app-container">
             {width > 800 && <PhoneCardContainer />}

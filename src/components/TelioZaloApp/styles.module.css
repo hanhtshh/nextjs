@@ -32,6 +32,11 @@
   position: relative;
   overflow: hidden;
   display: block;
+  height: 0;
+  padding-bottom: 58.823529411%;
+}
+.productSkuWrapperBox {
+  width: 100%;
 }
 .zaloValuePropositionImageWrapper {
   position: absolute;

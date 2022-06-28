@@ -31,16 +31,16 @@ const Footer = () => {
         </div>
         <div className={styles.footerTopWrapper}>
           <div className={styles.footerText}>
-            <div>{T("cong-ty")}</div>
-            <div>{T("dia-chi")}</div>
-            <div>{T("lien-he")}: 18006751</div>
+            <div>{T("Footer.office")}</div>
+            <div>{T("Footer.address")}</div>
+            <div>{T("Footer.hotline")}: 18006751</div>
             <div>
               Email:{" "}
               <a href="mailto: hotro@telio.vn" className={styles.email}>
                 hotro@telio.vn
               </a>
             </div>
-            <div>{T("bao-luu-moi-quyen")}</div>
+            <div>{T("Footer.rights")}</div>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {T("chinh-sach-thanh-toan")}
+                {T("Footer.paymentPolicy")}
               </a>
             </div>
             <div>
@@ -64,7 +64,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {T("chinh-sach-giao-hang")}
+                {T("Footer.deliveryPolicy")}
               </a>
             </div>
             <div>
@@ -74,7 +74,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {T("chinh-sach-doi-tra")}
+                {T("Footer.returnPolicy")}
               </a>
             </div>
             <div>
@@ -84,7 +84,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {T("chinh-sach-nha-ban-hang")}
+                {T("Footer.vendorPolicy")}
               </a>
             </div>
             <div>
@@ -94,7 +94,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {T("chinh-sach-bao-mat")}
+                {T("Footer.privacyPolicy")}
               </a>
             </div>
           </div>
