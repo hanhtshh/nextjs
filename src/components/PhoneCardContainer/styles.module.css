@@ -129,6 +129,7 @@
 }
 .BuyOnZaloWrapperBox{
   width: 60%;
+  height: 64px;
   display: flex;
   justify-content: center;
 }
@@ -142,10 +143,12 @@
     #dbf0ff 19.57%
   );
   z-index: 3;
-  left: 0;
+  top:500px !important;
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
-.fixZaloButton.show{
+.fixZaloButton.show1{
   position: fixed;
 }
 

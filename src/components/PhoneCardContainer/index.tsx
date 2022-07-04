@@ -11,7 +11,9 @@ import { WrapImage } from "../WrapImage";
 import TelioZaloApp from "../TelioZaloApp";
 const PhoneCardContainer = () => {
   const phoneCardConatinerRef = useRef<any>(null);
+  const fixZaloButtonRef = useRef<any>(null);
   const [fixedCard, setFixedCard] = useState(false);
+  const [fixedZaloButton, setFixedZaloButton] = useState(false);
   const handleScroll = () => {
     if (phoneCardConatinerRef.current) {
       let rect = phoneCardConatinerRef.current.getBoundingClientRect();
@@ -21,18 +23,35 @@ const PhoneCardContainer = () => {
         setFixedCard(false);
       }
     }
+    if (fixZaloButtonRef.current) {
+      let rect1 = fixZaloButtonRef.current.getBoundingClientRect();
+      if (rect1.top < 0) {
+        setFixedZaloButton(true);
+      } else {
+        setFixedZaloButton(false);
+      }
+    }
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   const show = fixedCard ? styles.show : "";
+  const show1 = fixedZaloButton ? styles.show1 : "";
+  console.log("re");
   return (
     <div
       className={`${styles.phoneCardContainer} ${show}`}
       ref={phoneCardConatinerRef}
       id="phone-card-container"
     >
-      <div className={styles.zaloFeaturesWrapper} id="text-wrapper">
+      <div
+        className={styles.zaloFeaturesWrapper}
+        id="text-wrapper"
+        ref={fixZaloButtonRef}
+      >
         <div
           className={`${styles.phoneCardsWrapper} feature-cards-wrapper`}
           id="genuine-product-card"
@@ -67,7 +86,7 @@ const PhoneCardContainer = () => {
         <div
           id="buy-on-zalo"
           style={{ top: `${window.innerHeight - 300}px` }}
-          className={`${styles.fixZaloButton} ${show}`}
+          className={`${styles.fixZaloButton} ${show1}`}
         >
           <div className={`${styles.BuyOnZaloWrapperBox}`}>
             <a
