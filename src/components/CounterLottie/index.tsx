@@ -20,16 +20,18 @@ const CounterLottie = () => {
   const { locale } = useRouter();
 
   const playLottie = () => {
-    let rect = lottieRef.current?.container.getBoundingClientRect();
-    let heigth = window.innerHeight;
-    if (
-      rect.top - heigth + 200 < 0 &&
-      !played.current &&
-      (lottieRef.current as any)?.play
-    ) {
-      played.current = true;
-      (lottieRef.current as any).play();
-      window.removeEventListener("scroll", playLottie);
+    if (lottieRef.current) {
+      let rect = lottieRef.current?.container.getBoundingClientRect();
+      let heigth = window.innerHeight;
+      if (
+        rect.top - heigth + 200 < 0 &&
+        !played.current &&
+        (lottieRef.current as any)?.play
+      ) {
+        played.current = true;
+        (lottieRef.current as any).play();
+        window.removeEventListener("scroll", playLottie);
+      }
     }
   };
 

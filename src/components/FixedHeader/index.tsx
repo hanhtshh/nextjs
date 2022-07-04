@@ -50,8 +50,10 @@ const FixedHeader = () => {
         locale: value,
       });
     }
+    console.log(value);
+    console.log(locale);
     setDropDownVisible(false);
-  }, []);
+  }, [locale]);
 
   const toggleDownloadDropDown = useCallback(() => {
     setDownloadDropDownVisible((currentValue) => !currentValue);

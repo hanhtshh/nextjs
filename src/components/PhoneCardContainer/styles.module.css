@@ -6,7 +6,7 @@
   box-sizing: border-box;
   height: 100%;
   background-color: #dbf0ff;
-  padding: 10rem 10rem 2rem 10rem;
+  padding: 0 5rem 0 5rem;
   z-index: 4;
   width: 100%;
   position: relative;
@@ -29,7 +29,6 @@
   margin-top: 25px;
   display: block;
   position: relative;
-  top: -50px;
 }
 
 .phoneCardsWrapper {
@@ -147,7 +146,6 @@
   );
   z-index: 3;
   top: 70vh;
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }

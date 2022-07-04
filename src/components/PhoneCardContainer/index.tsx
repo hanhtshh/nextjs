@@ -4,7 +4,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
-import gsap from "gsap";
 import { T } from "../../hooks/translation";
 import { ZALO_LINK } from "../../constants";
 import { WrapImage } from "../WrapImage";
@@ -31,11 +30,7 @@ const PhoneCardContainer = () => {
     }
     if (fixZaloButtonRef.current) {
       let rect1 = fixZaloButtonRef.current.getBoundingClientRect();
-      if (rect1.top - 10 < 0) {
-        setFixedZaloButton(true);
-      } else {
-        setFixedZaloButton(false);
-      }
+      rect1.top - 10 < 0 ? setFixedZaloButton(true) : setFixedZaloButton(false);
     }
   };
   useEffect(() => {

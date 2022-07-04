@@ -17,7 +17,7 @@ const Products = () => {
       let rect = productRef.current.getBoundingClientRect();
       if (rect.top - height / 2  < 0) {
         setShowProduct(true);
-         window.removeEventListener("scroll", handleScroll);
+        //  window.removeEventListener("scroll", handleScroll);
       } else {
         setShowProduct(false);
       }

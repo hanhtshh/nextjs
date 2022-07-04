@@ -27,8 +27,6 @@ import HeroBanner from "../src/components/HeroBanner";
 import FixedHeaderMobile from "../src/components/FixedHeaderMobile";
 import VerticalCardsContainer from "../src/components/VerticalCardsContainer";
 import ZaloDownload from "../src/components/ZaloDownload";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Products from "../src/components/Products";
 import dynamic from "next/dynamic";
 import PhoneCardContainer from "../src/components/PhoneCardContainer";
@@ -49,13 +47,6 @@ const DynamicFixedHeader = dynamic(
 const IndexPage = () => {
   const width = useWindowWidth();
   const [showHeader, setShowHeader] = useState(false);
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger); // Register scroll trigger with gsap to avoid tree shaking.
-
-    window.onbeforeunload = function () {
-      window?.scrollTo(0, 0);
-    };
-  }, []);
 
   return (
     <Layout>

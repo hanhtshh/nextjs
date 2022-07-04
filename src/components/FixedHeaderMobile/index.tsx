@@ -8,9 +8,6 @@ import styles from "./styles.module.css";
 import { T } from "../../hooks/translation";
 import MobileMenu from "../MobileMenu";
 import { WrapImage } from "../WrapImage";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { gsap } from "gsap";
-gsap.registerPlugin(ScrollTrigger);
 type FixedHeaderMobileProps = {
   showHeader: boolean;
 };
