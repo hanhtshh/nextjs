@@ -5,15 +5,17 @@ import * as React from "react";
 import { WrapImage } from "../WrapImage";
 
 import styles from "./styles.module.css";
-
-const ProductCard = () => {
+type ProductCardProps = {
+  fixedCard: boolean;
+};
+const ProductCard = ({ fixedCard }: ProductCardProps) => {
   const { locale } = useRouter();
 
   const isVietnamese = locale === "vi";
-
+  const show = fixedCard ? styles.show : "";
   return (
     <>
-      <div className={`${styles.productCardWrapper}  productCard1 productCard`}>
+      <div className={`${styles.productCardWrapper} ${show}`}>
         <WrapImage
           desktop={{
             src: isVietnamese
@@ -27,7 +29,7 @@ const ProductCard = () => {
         />
       </div>
       <div
-        className={`${styles.productCardWrapper}  productCard1 productCard`}
+        className={`${styles.productCardWrapper}  ${show}`}
         style={{ bottom: 15 }}
       >
         <WrapImage

@@ -46,9 +46,6 @@ const DynamicFixedHeader = dynamic(
     ssr: false,
   }
 );
-const DynamicProduct = dynamic(() => import("../src/components/Products"), {
-  ssr: false,
-});
 const IndexPage = () => {
   const width = useWindowWidth();
   const [showHeader, setShowHeader] = useState(false);
@@ -83,7 +80,7 @@ const IndexPage = () => {
             </>
           )}
           <VerticalCardsContainer />
-          <DynamicProduct />
+          <Products />
 
           <div className="zalo-app-container">
             {width > 800 && <PhoneCardContainer />}

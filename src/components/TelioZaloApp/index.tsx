@@ -3,12 +3,27 @@ import styles from "./styles.module.css";
 import { useRouter } from "next/router";
 import { WrapImage } from "../WrapImage";
 import ProductCard from "../ProductCard";
-
-const TelioZaloApp = () => {
+import { useWindowWidth } from "../../hooks/useWindowWidthHook";
+type TelioZaloAppProps = {
+  image1Show: boolean;
+  image2Show: boolean;
+  fixedCard: boolean;
+};
+const TelioZaloApp = ({
+  image1Show,
+  image2Show,
+  fixedCard,
+}: TelioZaloAppProps) => {
   const { locale } = useRouter();
+  const width = useWindowWidth();
   const isVietnamese = locale === "vi";
+  const show1 = image1Show ? styles.show : "";
+  const show2 = image2Show ? styles.show : "";
   return (
-    <div className={`${styles.zaloAppWrapper} zalo-phone-wrapper`}>
+    <div
+      style={{ zoom: `${width / 1700}` }}
+      className={`${styles.zaloAppWrapper} zalo-phone-wrapper`}
+    >
       <div className={styles.zaloContainer}>
         <div
           className={styles.zaloValuePropositionImageWrapper}
@@ -29,7 +44,7 @@ const TelioZaloApp = () => {
               />
             </div>
             <div className={styles.productCards}>
-              <ProductCard />
+              <ProductCard fixedCard={fixedCard} />
             </div>
           </div>
         </div>
@@ -43,7 +58,7 @@ const TelioZaloApp = () => {
                 ? "/images/value2-vi.png"
                 : "/images/value2-en.png",
               alt: "phone-frame",
-              className: styles.mobileFrame,
+              className: `${styles.mobileFrame} ${show1}`,
               layout: "fill",
               objectFit: "cover",
             }}
@@ -57,7 +72,7 @@ const TelioZaloApp = () => {
             desktop={{
               src: "/images/value3.png",
               alt: "phone-frame",
-              className: styles.mobileFrame,
+              className: `${styles.mobileFrame} ${show2}`,
               layout: "fill",
               objectFit: "cover",
             }}
@@ -68,4 +83,4 @@ const TelioZaloApp = () => {
   );
 };
 
-export default TelioZaloApp;
+export default React.memo(TelioZaloApp);

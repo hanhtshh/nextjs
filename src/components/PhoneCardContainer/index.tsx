@@ -12,20 +12,26 @@ import TelioZaloApp from "../TelioZaloApp";
 const PhoneCardContainer = () => {
   const phoneCardConatinerRef = useRef<any>(null);
   const fixZaloButtonRef = useRef<any>(null);
+  const [image1Show, setImage1Show] = useState(false);
+  const [image2Show, setImage2Show] = useState(false);
   const [fixedCard, setFixedCard] = useState(false);
   const [fixedZaloButton, setFixedZaloButton] = useState(false);
+  const [endScroll, setEndScroll] = useState(false);
   const handleScroll = () => {
     if (phoneCardConatinerRef.current) {
       let rect = phoneCardConatinerRef.current.getBoundingClientRect();
-      if (rect.top - 150 < 0) {
-        setFixedCard(true);
-      } else {
-        setFixedCard(false);
-      }
+      rect.top - 20 < 0 ? setFixedCard(true) : setFixedCard(false);
+
+      rect.bottom - window.innerHeight < 0
+        ? setEndScroll(true)
+        : setEndScroll(false);
+
+      rect.top + 700 < 0 ? setImage1Show(true) : setImage1Show(false);
+      rect.top + 1400 < 0 ? setImage2Show(true) : setImage2Show(false);
     }
     if (fixZaloButtonRef.current) {
       let rect1 = fixZaloButtonRef.current.getBoundingClientRect();
-      if (rect1.top < 0) {
+      if (rect1.top - 10 < 0) {
         setFixedZaloButton(true);
       } else {
         setFixedZaloButton(false);
@@ -40,6 +46,7 @@ const PhoneCardContainer = () => {
   }, []);
   const show = fixedCard ? styles.show : "";
   const show1 = fixedZaloButton ? styles.show1 : "";
+  const show2 = endScroll ? styles.show2 : "";
   console.log("re");
   return (
     <div
@@ -85,8 +92,7 @@ const PhoneCardContainer = () => {
         </div>
         <div
           id="buy-on-zalo"
-          style={{ top: `${window.innerHeight - 300}px` }}
-          className={`${styles.fixZaloButton} ${show1}`}
+          className={`${styles.fixZaloButton} ${show2} ${show1}`}
         >
           <div className={`${styles.BuyOnZaloWrapperBox}`}>
             <a
@@ -177,10 +183,14 @@ const PhoneCardContainer = () => {
         </div>
       </div>
       <div
-        className={`${styles.phoneFrameWrapper} ${show} phone-frame-wrapper`}
+        className={`${styles.phoneFrameWrapper} ${show2} ${show} phone-frame-wrapper`}
         id="phone-card"
       >
-        <TelioZaloApp />
+        <TelioZaloApp
+          fixedCard={fixedCard}
+          image1Show={image1Show}
+          image2Show={image2Show}
+        />
       </div>
     </div>
   );
