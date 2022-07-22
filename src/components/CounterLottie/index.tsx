@@ -1,81 +1,68 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import { Player } from "@lottiefiles/react-lottie-player";
-import { useRouter } from "next/router";
-import React, { useRef, useEffect, useCallback, useState } from "react";
-import {
-  COUNTER_LOTTIE_EN,
-  COUNTER_LOTTIE_EN_MOBILE,
-  COUNTER_LOTTIE_VI,
-  COUNTER_LOTTIE_VI_MOBILE,
-} from "../../constants";
-import { useWindowWidth } from "../../hooks/useWindowWidthHook";
-import PlayerCustom from "../PlayerCustom";
+import { useRouter } from 'next/router';
+import React, { useRef, useEffect } from 'react';
+import { useWindowWidth } from '../../hooks/useWindowWidthHook';
+import counterLottieVi from '../../constants/animations/counter_lottie_vi.json';
+import counterLottieEn from '../../constants/animations/counter_lottie_en.json';
+import counterLottieMobileVi from '../../constants/animations/counter_lottie_mobile_vi.json';
+import counterLottieMobileEn from '../../constants/animations/counter_lottie_mobile_en.json';
+import Lottie from 'lottie-react';
 // eslint-disable-next-line max-len
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 const CounterLottie = () => {
   const width = useWindowWidth();
   const lottieRef = useRef<any>(null);
-  const played = useRef(false);
   const { locale } = useRouter();
 
   const playLottie = () => {
-    if (lottieRef.current) {
-      let rect = lottieRef.current?.container.getBoundingClientRect();
+    if (lottieRef.current.animationContainerRef.current) {
+      let rect =
+        lottieRef.current?.animationContainerRef.current.getBoundingClientRect();
       let heigth = window.innerHeight;
-      if (
-        rect.top - heigth + 200 < 0 &&
-        !played.current &&
-        (lottieRef.current as any)?.play
-      ) {
-        played.current = true;
+      if (rect.top - heigth + 200 < 0 && (lottieRef.current as any)?.play) {
+        (lottieRef.current as any).setSpeed(2);
         (lottieRef.current as any).play();
-        window.removeEventListener("scroll", playLottie);
       }
     }
   };
 
   const setLottieURL = (isMobile: boolean) => {
-    let lottie = locale === "vi" ? COUNTER_LOTTIE_VI : COUNTER_LOTTIE_EN;
+    let lottie: any = locale === 'vi' ? counterLottieVi : counterLottieEn;
     if (isMobile) {
-      lottie =
-        locale === "vi" ? COUNTER_LOTTIE_VI_MOBILE : COUNTER_LOTTIE_EN_MOBILE;
+      lottie = locale === 'vi' ? counterLottieMobileVi : counterLottieMobileEn;
     }
-    return `${lottie}?version=${isMobile ? 1 : 0.5}`;
+    return lottie;
   };
   useEffect(() => {
-    window.addEventListener("scroll", playLottie, { passive: true });
+    window.addEventListener('scroll', playLottie, { passive: true });
     return () => {
-      window.removeEventListener("scroll", playLottie);
+      window.removeEventListener('scroll', playLottie);
     };
   }, []);
-  console.log("render");
   return (
     <>
-      {width && width > 700 && (
-        <div id="lottie-container" className={styles.counterLottieContainer}>
+      {width > 700 && (
+        <div id='lottie-container' className={styles.counterLottieContainer}>
           <div className={styles.lottiePlayerWrapper}>
-            <PlayerCustom
-              id="firstLottie"
-              speed={2}
-              ref={lottieRef}
-              keepLastFrame={true}
-              renderer={false}
-              src={setLottieURL(false)}
+            <Lottie
+              lottieRef={lottieRef}
+              autoplay={false}
+              loop={false}
+              animationData={setLottieURL(false)}
             />
           </div>
         </div>
       )}
-      {width && width <= 700 && (
-        <div id="lottie-container" className={styles.counterLottieContainer}>
+      {width <= 700 && (
+        <div id='lottie-container' className={styles.counterLottieContainer}>
           <div className={styles.lottiePlayerWrapper}>
-            <PlayerCustom
-              id="firstLottie"
-              speed={2}
-              ref={lottieRef}
-              keepLastFrame={true}
-              renderer={false}
-              src={setLottieURL(true)}
+            <Lottie
+              lottieRef={lottieRef}
+              autoplay={false}
+              loop={false}
+              className={styles.lottie}
+              animationData={setLottieURL(true)}
             />
           </div>
         </div>

@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Extrabold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Extrabold'), local('AvertaStdCY Extrabold'),
+    url('../fonts/AvertaStdCY-Extrabold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Semibold';
+  font-weight: 600;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold2'), local('AvertaStdCY Bold2'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+.faqContainer {
+  padding: 24px 16px;
+  font-family: 'AvertaStdCY';
+  background: white;
+  color: #1e2e3d;
+}
+.faqTitleContainer {
+  margin-bottom: 24px;
+}
+.faqTitle {
+  font-family: 'AvertaStdCY-Regular' !important;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 32px;
+  color: #1e2e3d;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.answerContent {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #1e2e3d;
+}
+.answerContent_headding {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'AvertaStdCY' !important;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.answerContent_content {
+  font-size: 15px;
+  font-family: 'AvertaStdCY' !important;
+}
+.answerContent_listContentDetail {
+  font-family: 'AvertaStdCY' !important;
+  font-size: 14px;
+}
+.answerContent_headdingPost {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'AvertaStdCY' !important;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin: 16px 0;
+}
+.answerContent_td {
+  border: 1px solid #1e2e3d;
+  padding: 10px;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  text-align: left;
+}
+.answerContent_td:first-child {
+  padding-left: 10px;
+}
+.answerContent_td:last-child {
+  padding-right: 10px;
+}
+
+.answerContent_th {
+  border: 1px solid #1e2e3d;
+  padding: 10px;
+  border-collapse: collapse;
+}
+.answerContent_th:first-child {
+  padding-left: 10px;
+}
+.answerContent_th:last-child {
+  padding-right: 10px;
+}
+.answerContent_table {
+  border: 1px solid #1e2e3d;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.answerContent_tr {
+}

@@ -1,42 +1,42 @@
-import * as React from "react";
-import SectionTitle from "../SectionTitle";
-import { WrapImage } from "../WrapImage";
-import styles from "./styles.module.css";
+import * as React from 'react';
+import SectionTitle from '../SectionTitle';
+import { WrapImage } from '../WrapImage';
+import styles from './styles.module.css';
 
 const Investors = () => (
   <div className={styles.investorsSection}>
-    <SectionTitle title="investors.title" />
+    <SectionTitle title='investors.title' />
     <div className={styles.investorsContainer}>
       <div className={styles.investorLogoContainer}>
         <WrapImage
           desktop={{
-            src: "/images/VNG-logo.png",
-            alt: "",
+            src: '/images/VNG-logo.png',
+            alt: '',
             className: `${styles.investorLogo} ${styles.vngLogo}`,
-            layout: "fill",
-            objectFit: "cover",
+            layout: 'fill',
+            objectFit: 'cover',
           }}
         />
       </div>
       <div className={styles.investorLogoContainer}>
         <WrapImage
           desktop={{
-            src: "/images/investor-sequoia.png",
-            alt: "",
+            src: '/images/investor-sequoia.png',
+            alt: '',
             className: `${styles.investorLogo} ${styles.sequoiaLogo}`,
-            layout: "fill",
-            objectFit: "cover",
+            layout: 'fill',
+            objectFit: 'cover',
           }}
         />
       </div>
       <div className={styles.investorLogoContainer}>
         <WrapImage
           desktop={{
-            src: "/images/investor-tiger-global.png",
-            alt: "",
+            src: '/images/investor-tiger-global.png',
+            alt: '',
             className: `${styles.investorLogo} ${styles.tigerGlobalLogo}`,
-            layout: "fill",
-            objectFit: "cover",
+            layout: 'fill',
+            objectFit: 'cover',
           }}
         />
       </div>
@@ -44,10 +44,10 @@ const Investors = () => (
       <div className={styles.investorLogoContainer}>
         <WrapImage
           desktop={{
-            src: "/images/investor-rtp-global.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
+            src: '/images/investor-rtp-global.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
             className: `${styles.investorLogo} ${styles.rtpGlobalLogo}`,
           }}
         />
@@ -55,11 +55,11 @@ const Investors = () => (
       <div className={styles.investorLogoContainer}>
         <WrapImage
           desktop={{
-            src: "/images/investor-ggv-capital.png",
-            alt: "",
+            src: '/images/investor-ggv-capital.png',
+            alt: '',
             className: `${styles.investorLogo} ${styles.ggvCapitalLogo}`,
-            layout: "fill",
-            objectFit: "cover",
+            layout: 'fill',
+            objectFit: 'cover',
           }}
         />
       </div>

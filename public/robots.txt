@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# BEGIN XML-SITEMAP
+Sitemap:https://telio.vn/sitemap.xml
+# END XML-SITEMAP

@@ -1,0 +1,362 @@
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../../../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../../../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Extrabold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Extrabold'), local('AvertaStdCY Extrabold'),
+    url('../../../fonts/AvertaStdCY-Extrabold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Semibold';
+  font-weight: 600;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold2'), local('AvertaStdCY Bold2'),
+    url('../../../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../../../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../../../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../../../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+
+.container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin-bottom: 100px;
+  font-family: 'AvertaStdCY-Regular' !important;
+}
+
+.wrapper {
+  background: #fff;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  min-height: 100%;
+  margin-bottom: 40px;
+  font-family: 'AvertaStdCY-Regular' !important;
+}
+
+.titleContainer {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: 'AvertaStdCY-Bold' !important;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #156cdd;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.titleIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  display: block;
+  position: relative;
+}
+
+.titleDescription {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-bottom: 0px;
+  color: #1e2e3d;
+}
+
+.subTitle {
+  color: #1e2e3d;
+  text-align: center;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.thumbnail {
+  width: 100%;
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 66.933333333%;
+}
+
+.linkContainer {
+  padding: 16px 0;
+}
+
+.link,
+.link:hover,
+.link:focus,
+.link:visited {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #11a2e0;
+  text-decoration: underline;
+}
+
+.videoContainer {
+  margin: 0 24px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dbdbdb;
+  display: block;
+}
+
+.video {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+}
+
+.videoOnlyPoster {
+  width: calc(100vw - 48px);
+  max-width: 720px;
+  height: calc(50vw - 24px);
+}
+
+.videoGuideText {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.section {
+  padding: 30px 0px;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 0 16px;
+}
+
+.sectionNoBorder {
+  padding: 30px 16px;
+}
+
+.sectionImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionImage {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: relative;
+}
+
+.sectionInfoContainer {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.sectionTitle {
+  font-family: 'AvertaStdCY-Bold' !important;
+  font-weight: 800;
+  color: #000;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+.sectionDescription {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-bottom: 0px;
+  color: #1e2e3d;
+}
+
+.faqContainer {
+  margin-top: 30px;
+  padding: 24px 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(32, 161, 255, 0.13) 0%,
+    rgba(236, 248, 253, 0) 100%
+  );
+}
+
+.faqTitleContainer {
+  margin-bottom: 24px;
+}
+
+.faqTitle {
+  font-family: 'AvertaStdCY-Regular' !important;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1e2e3d;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.questionDropdownContainer {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 8px;
+  padding-top: 20px;
+}
+
+.questionContent {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  margin-bottom: 0px;
+  color: #1e2e3d;
+}
+
+.answerContent {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #1e2e3d;
+}
+
+.answer {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #1e2e3d;
+}
+
+.questionContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.questionContentContainer {
+  flex: 1;
+}
+
+.arrowContainer {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answerContainer {
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  overflow: hidden;
+  max-height: 0;
+}
+
+.answerContainerShow {
+  max-height: 1000px;
+  margin-bottom: 12px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: block;
+}
+
+.actionContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  z-index: 10;
+}
+
+.button {
+  background: #11a2e0;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.invertButton {
+  background: #fff;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #11a2e0;
+  margin-top: 8px;
+}
+
+.buttonText {
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #fff;
+}
+
+.invertButtonText {
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #11a2e0;
+}
+
+.hotlineCall,
+.hotlineCall:visited,
+.hotlineCall:focus,
+.hotlineCall:hover {
+  color: #11a2e0;
+  text-decoration: none;
+}
+
+.headline {
+  color: #1e2e3d;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  text-align: center;
+}

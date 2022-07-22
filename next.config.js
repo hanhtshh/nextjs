@@ -12,8 +12,5 @@ const nextConfig = {
   },
   trailingSlash: true,
 };
-const withTM = require("next-transpile-modules")(["gsap"]);
 
-module.exports = withTM({});
-
-module.exports = nextConfig
+module.exports = nextConfig;

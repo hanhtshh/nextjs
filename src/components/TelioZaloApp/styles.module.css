@@ -22,7 +22,7 @@
   height: 660px;
   width: 340px;
   z-index: 3;
-  background-image: url("../../../public/images/Phoneframe.png");
+  background-image: url('../../../public/images/Phoneframe.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -78,7 +78,7 @@
   height: 89.5%;
   width: 297px;
   border-radius: 30px;
-  background-image: url("../../../public/images/Screen.png");
+  background-image: url('../../../public/images/Screen.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

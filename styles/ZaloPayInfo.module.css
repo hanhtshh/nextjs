@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Extrabold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Extrabold'), local('AvertaStdCY Extrabold'),
+    url('../fonts/AvertaStdCY-Extrabold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Semibold';
+  font-weight: 600;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold2'), local('AvertaStdCY Bold2'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+
+.container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin-bottom: 100px;
+  font-family: 'AvertaStdCY-Regular' !important;
+}
+
+.titleContainer {
+  text-align: center;
+}
+
+.title {
+  font-family: 'AvertaStdCY-Bold' !important;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #156cdd;
+  font-size: 27px;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: none;
+}
+
+.titleIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.titleDescription {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-bottom: 0px;
+  color: #666d74;
+}
+
+.section {
+  padding: 30px 0px;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 0 16px;
+}
+
+.sectionImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66.933333333%;
+  position: relative;
+}
+.sectionImage {
+  width: 52px;
+  height: 52px;
+  display: block;
+  position: relative;
+}
+
+.sectionInfoContainer {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.sectionTitle {
+  font-family: 'AvertaStdCY-Bold' !important;
+  font-weight: bolder;
+  color: #000;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+.sectionDescription {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-bottom: 0px;
+  color: #666d74;
+}
+
+.actionContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1px 16px 7px 16px;
+  border: 1px solid #fff;
+  z-index: 10;
+  box-shadow: 25px 25px 25px 25px #aaa;
+}
+
+.button {
+  background: #11a2e0;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.invertButton {
+  background: #fff;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #11a2e0;
+  margin-top: 8px;
+}
+
+.buttonText {
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #fff;
+}
+
+.invertButtonText {
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #11a2e0;
+}
+
+.zaloInstructionStepContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zaloInstructionStepItemContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.wrapZaloInstructionStepLeftItem {
+  margin: 20px;
+  background-color: #0795ff;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  border-radius: 1000px;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  border: 4px solid white;
+}
+
+.leftItemContent {
+  color: white;
+  font-weight: 700;
+}
+
+.wrapZaloInstructionStepRightItem {
+  text-align: start;
+  margin: 20px;
+  flex: 9;
+}
+
+.lineStepContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.lineStepContainerLeftItem {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.lineStepContainerRightItem {
+  display: flex;
+  z-index: 10;
+  background-color: yellow;
+}

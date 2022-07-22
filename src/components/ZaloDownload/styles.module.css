@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "AvertaStdCY-Regular";
+  font-family: 'AvertaStdCY-Regular';
   line-height: 150%;
   letter-spacing: 0.8px;
   width: 90%;
@@ -93,7 +93,7 @@
   display: none;
 }
 .heroSubText {
-  font-family: "AvertaStdCY-Bold";
+  font-family: 'AvertaStdCY-Bold';
   color: white;
   font-weight: bold;
   font-style: normal;

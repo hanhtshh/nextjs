@@ -1,4 +1,4 @@
-@import "../../../styles//typography.css";
+@import '../../../styles//typography.css';
 
 .verticalCardsContainer {
   display: flex;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 .verticalCardsContainerHeader {
-  font-family: "AvertaStdCY-Bold";
+  font-family: 'AvertaStdCY-Bold';
   letter-spacing: 4px;
   text-transform: uppercase;
   text-align: center;
@@ -58,5 +58,10 @@
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .verticalCardsContainer {
     height: 80vh;
+  }
+}
+@media (max-width: 280px) {
+  .verticalCardsContainer {
+    padding: 1rem;
   }
 }

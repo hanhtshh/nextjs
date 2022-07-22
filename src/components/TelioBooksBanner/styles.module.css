@@ -9,7 +9,7 @@
   width: 100%;
   align-items: center;
   color: #0795ff;
-  font-family: "AvertaStdCY-Regular";
+  font-family: 'AvertaStdCY-Regular';
   overflow: hidden;
 }
 .telioBooksBannerBody {
@@ -32,14 +32,14 @@
   text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: bold;
-  font-family: "AvertaStdCY-Bold";
+  font-family: 'AvertaStdCY-Bold';
 }
 .telioBooksBannerMessage {
   font-size: 24px;
   line-height: 120%;
   letter-spacing: 1px;
   margin-bottom: 45px;
-  font-family: "AvertaStdCY-Regular";
+  font-family: 'AvertaStdCY-Regular';
 }
 .telioBooksBannerBooksLogo {
   width: 140px;

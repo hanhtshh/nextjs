@@ -1,4 +1,4 @@
-@import "../../../styles//typography.css";
+@import '../../../styles//typography.css';
 
 .dropDownWrappper {
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .dropDownWrappper::before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 0px;
@@ -26,7 +26,11 @@
   border-bottom: 8px solid white;
   transform: translateY(calc(-100%));
 }
-
+.dropDownWrappper.rotate::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  left: -11px;
+}
 .dropDownOption {
   display: flex;
   width: 100%;
@@ -47,10 +51,11 @@
 }
 
 .dropDownLabel {
-  font-family: "AvertaStdCY-Regular";
+  font-family: 'AvertaStdCY-Regular';
   font-size: 16px;
 }
-
+.rotate {
+}
 /* For mobile screens */
 @media only screen and (max-width: 600px) {
   .dropDownWrappper::before {

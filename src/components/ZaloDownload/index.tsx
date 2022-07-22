@@ -1,16 +1,16 @@
 /* eslint-disable no-undef */
-import React, { useEffect, useRef } from "react";
-import { isIOS, isAndroid } from "react-device-detect";
-import styles from "./styles.module.css";
+import React, { useEffect, useRef } from 'react';
+import { isIOS, isAndroid } from 'react-device-detect';
+import styles from './styles.module.css';
 import {
   openTelioAppAppStore,
   openTelioAppPlayStore,
   openTelioZalo,
-} from "../../utils";
-import { T } from "../../hooks/translation";
-import DropDownToolTip from "../DropDownToolTip";
-import { stores } from "../../constants";
-import { WrapImage } from "../WrapImage";
+} from '../../utils';
+import { T } from '../../hooks/translation';
+import DropDownToolTip from '../DropDownToolTip';
+import { stores } from '../../constants';
+import { WrapImage } from '../WrapImage';
 const { useState, useCallback } = React;
 
 // eslint-disable-next-line react/prop-types
@@ -31,7 +31,7 @@ const ZaloDownload = ({ setShowHeader }: ZaloDownloadProps) => {
   }, []);
 
   const onStoreSelect = useCallback((event) => {
-    if (event.target.value === "iOS") {
+    if (event.target.value === 'iOS') {
       openTelioAppAppStore();
     } else {
       openTelioAppPlayStore();
@@ -54,53 +54,53 @@ const ZaloDownload = ({ setShowHeader }: ZaloDownloadProps) => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   });
   return (
     <div className={`${styles.zaloDownloadContainer} `} ref={zaloDownloadRef}>
-      <span className={styles.heroSubText} id="offers-text">
-        {T("title.heroBannerSubTitle")}
+      <span className={styles.heroSubText} id='offers-text'>
+        {T('title.heroBannerSubTitle')}
       </span>
       <button
-        type="button"
+        type='button'
         className={`${styles.zaloDownloadSubContainer} ${styles.visitZaloContainer}`}
         onClick={openTelioZalo}
       >
         <WrapImage
           desktop={{
-            src: "/images/zalo-logo.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
+            src: '/images/zalo-logo.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
             className: styles.zaloDownloadIcon,
           }}
         />
         <span className={styles.zaloDownloadVisitZalo}>
-          {T("fixedHeader.telioZaloStore")}
+          {T('fixedHeader.telioZaloStore')}
         </span>
       </button>
       <div
         className={`${styles.zaloDownloadSubContainer} ${styles.downloadAppContainer}`}
       >
         <button
-          type="button"
+          type='button'
           className={styles.downloadAppButton}
           onClick={onAppDownloadClick}
         >
           <WrapImage
             desktop={{
-              src: "/images/download.svg",
-              alt: "",
-              layout: "fill",
-              objectFit: "cover",
+              src: '/images/download.svg',
+              alt: '',
+              layout: 'fill',
+              objectFit: 'cover',
               className: styles.zaloDownloadIcon,
             }}
           />
           <span className={styles.zaloDownloadAppDownload}>
-            {T("zaloApp.download")}
+            {T('zaloApp.download')}
           </span>
         </button>
         {showStores && (
@@ -108,35 +108,35 @@ const ZaloDownload = ({ setShowHeader }: ZaloDownloadProps) => {
             <div className={styles.mobileStores}>
               <button
                 className={styles.store}
-                type="button"
+                type='button'
                 onClick={openTelioAppAppStore}
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/appStoreIcon.svg",
-                    alt: "",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/appStoreIcon.svg',
+                    alt: '',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.zaloDownloadIcon,
                   }}
                 />
-                <span>{T("zaloApp.forIOS")}</span>
+                <span>{T('zaloApp.forIOS')}</span>
               </button>
               <button
                 className={styles.store}
-                type="button"
+                type='button'
                 onClick={openTelioAppPlayStore}
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/playStoreIcon.svg",
-                    alt: "",
+                    src: '/images/playStoreIcon.svg',
+                    alt: '',
                     className: styles.zaloDownloadIcon,
-                    objectFit: "cover",
-                    layout: "fill",
+                    objectFit: 'cover',
+                    layout: 'fill',
                   }}
                 />
-                <span>{T("zaloApp.forAndroid")}</span>
+                <span>{T('zaloApp.forAndroid')}</span>
               </button>
             </div>
             <div className={styles.dropdownContainer}>
@@ -144,7 +144,7 @@ const ZaloDownload = ({ setShowHeader }: ZaloDownloadProps) => {
                 options={stores}
                 onClick={onStoreSelect}
                 onClickOutside={hidePopup}
-                id="fixedPhoneDownload"
+                id='fixedPhoneDownload'
               />
             </div>
           </div>

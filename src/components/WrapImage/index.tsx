@@ -1,7 +1,7 @@
-import React, { CSSProperties } from "react";
-import Image from "next/image";
-import { useWindowWidth } from "../../hooks/useWindowWidthHook";
-type layout = "fixed" | "fill" | "intrinsic" | "responsive" | undefined;
+import React, { CSSProperties } from 'react';
+import Image from 'next/image';
+import { useWindowWidth } from '../../hooks/useWindowWidthHook';
+type layout = 'fixed' | 'fill' | 'intrinsic' | 'responsive' | undefined;
 
 type WrapImageProps = {
   mobile?: {
@@ -35,7 +35,7 @@ type WrapImageProps = {
 export const WrapImage = (props: WrapImageProps) => {
   const { mobile, desktop } = props;
   const width = useWindowWidth();
-  if (width && width <= 768 && mobile) {
+  if (width <= 768 && mobile) {
     // mobile screen
     return (
       <span className={mobile.className} style={mobile.style} id={mobile.id}>
@@ -44,7 +44,7 @@ export const WrapImage = (props: WrapImageProps) => {
           alt={mobile.alt}
           width={mobile.width}
           height={mobile.height}
-          layout={mobile.layout || "intrinsic"}
+          layout={mobile.layout || 'intrinsic'}
           objectFit={mobile.objectFit}
           priority={mobile.priority}
           quality={mobile.quality || 100}
@@ -59,7 +59,7 @@ export const WrapImage = (props: WrapImageProps) => {
         alt={desktop.alt}
         width={desktop.width}
         height={desktop.height}
-        layout={desktop.layout || "intrinsic"}
+        layout={desktop.layout || 'intrinsic'}
         objectFit={desktop.objectFit}
         priority={desktop.priority}
         quality={desktop.quality || 100}

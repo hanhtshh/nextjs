@@ -106,5 +106,8 @@
   "link": "vi",
   "flag": "VN",
   "image-footer": "footer-banner-vi",
-  "image-footer-mobile": "footer-banner-mobile-vi"
+  "image-footer-mobile": "footer-banner-mobile-vi",
+  "xin-loi-trang-ban-da-truy-cap-khong-ton-tai": "Xin lỗi, trang bạn đã truy cập không tồn tại.",
+  "quay-lai-trang-chu": "Quay lại trang chủ",
+  "trang-khong-ton-tai": "Trang không tồn tại"
 }

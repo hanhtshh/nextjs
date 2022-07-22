@@ -2,12 +2,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import styles from "./styles.module.css";
-import { T } from "../../hooks/translation";
-import MobileMenu from "../MobileMenu";
-import { WrapImage } from "../WrapImage";
+import styles from './styles.module.css';
+import { T } from '../../hooks/translation';
+import MobileMenu from '../MobileMenu';
+import { WrapImage } from '../WrapImage';
 type FixedHeaderMobileProps = {
   showHeader: boolean;
 };
@@ -16,14 +16,14 @@ const FixedHeaderMobile = ({ showHeader }: FixedHeaderMobileProps) => {
   const toggleDrawer = (open: any) => (event: any) => {
     if (
       event &&
-      event?.type === "keydown" &&
-      (event?.key === "Tab" || event?.key === "Shift")
+      event?.type === 'keydown' &&
+      (event?.key === 'Tab' || event?.key === 'Shift')
     ) {
       return;
     }
     setShowDrawer(open);
   };
-  const show = showHeader ? styles.show : "";
+  const show = showHeader ? styles.show : '';
   return (
     <div className={`${styles.fixedHeaderMobileContainer} ${show} `}>
       <MobileMenu
@@ -33,10 +33,10 @@ const FixedHeaderMobile = ({ showHeader }: FixedHeaderMobileProps) => {
       />
       <WrapImage
         desktop={{
-          src: "/images/Logo-Telio.png",
-          alt: "telio-logo",
-          layout: "fill",
-          objectFit: "cover",
+          src: '/images/Logo-Telio.png',
+          alt: 'telio-logo',
+          layout: 'fill',
+          objectFit: 'cover',
           className: styles.headerZaloImage,
         }}
       />
@@ -47,15 +47,15 @@ const FixedHeaderMobile = ({ showHeader }: FixedHeaderMobileProps) => {
       >
         <div>
           <span className={styles.sourceNowText}>
-            {T("fixedHeaderMobile.home")}{" "}
+            {T('fixedHeaderMobile.home')}{' '}
           </span>
         </div>
         <WrapImage
           desktop={{
-            src: "/images/Down.png",
-            alt: "Down",
-            layout: "fill",
-            objectFit: "cover",
+            src: '/images/Down.png',
+            alt: 'Down',
+            layout: 'fill',
+            objectFit: 'cover',
             className: styles.downImage,
           }}
         />

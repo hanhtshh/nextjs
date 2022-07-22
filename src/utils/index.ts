@@ -5,10 +5,10 @@ import {
   TELIO_PLAYSTORE_LINK,
   ZALO_LINK,
   COUNTRY_CODE,
-} from "../constants";
+} from '../constants';
 
 export const openInNewTab = (url: string) => {
-  window.open(url, "_blank");
+  window.open(url, '_blank');
 };
 
 export const openTelioZalo = () => {
@@ -40,64 +40,64 @@ export const openTelioAppPlayStore = () => {
 // };
 
 // profile = JSON of profile property key-value pairs
-// export const initCleverTapUserProfile = (profile) => {
-//   try {
-//     const clevertap = window?.clevertap;
-//     clevertap.onUserLogin.push({
-//       Site: {
-//         ...profile,
-//       },
-//     });
+export const initCleverTapUserProfile = (profile: any) => {
+  try {
+    const clevertap = (window as any)?.clevertap;
+    clevertap.onUserLogin.push({
+      Site: {
+        ...profile,
+      },
+    });
 
-//     console.log("clevertap", clevertap, profile);
-//   } catch (error) {
-//     console.log("Failed to initialize clevertap profile");
-//   }
-// };
+    console.log('clevertap', clevertap, profile);
+  } catch (error) {
+    console.log('Failed to initialize clevertap profile');
+  }
+};
 
 // profile = JSON of profile property key-value pairs
-// export const updateClevertapUserProfile = (profile) => {
-//   try {
-//     const clevertap = window?.clevertap;
-//     clevertap.profile.push({
-//       Site: {
-//         ...profile,
-//       },
-//     });
-//   } catch (error) {
-//     console.log("Failed to update clevertap profile");
-//   }
-// };
+export const updateClevertapUserProfile = (profile: any) => {
+  try {
+    const clevertap = (window as any)?.clevertap;
+    clevertap.profile.push({
+      Site: {
+        ...profile,
+      },
+    });
+  } catch (error) {
+    console.log('Failed to update clevertap profile');
+  }
+};
 
-// export const pushClevertapEvent = (eventName, eventProps) => {
-//   try {
-//     const clevertap = window?.clevertap;
-//     const viewType = "Zalo WebView";
-//     const channel = viewType;
-//     const clevertapEventProps = {
-//       channel,
-//       ...eventProps,
-//     };
+export const pushClevertapEvent = (eventName: any, eventProps?: any) => {
+  try {
+    const clevertap = (window as any)?.clevertap;
+    const viewType = 'Zalo WebView';
+    const channel = viewType;
+    const clevertapEventProps = {
+      channel,
+      ...eventProps,
+    };
 
-//     clevertap.event.push(eventName, clevertapEventProps);
-//   } catch (error) {
-//     console.log("Failed to register clevertap event");
-//   }
-// };
+    clevertap.event.push(eventName, clevertapEventProps);
+  } catch (error) {
+    console.log('Failed to register clevertap event');
+  }
+};
 
-// export const formatMobileNumber = (value, isCountryCode) => {
-//   if (!value || !value.trim()) {
-//     return "";
-//   }
-//   if (value.length < 10) {
-//     return isCountryCode ? `${COUNTRY_CODE}${value}` : `0${value}`;
-//   }
-//   if (value.substring(0, 1) === "0") {
-//     return isCountryCode
-//       ? `${COUNTRY_CODE}${value.substring(1, 10)}`
-//       : `${value.substring(0, 10)}`;
-//   }
-//   return isCountryCode
-//     ? `${COUNTRY_CODE}${value.substring(0, 9)}`
-//     : `0${value.substring(0, 9)}`;
-// };
+export const formatMobileNumber = (value: any, isCountryCode: any) => {
+  if (!value || !value.trim()) {
+    return '';
+  }
+  if (value.length < 10) {
+    return isCountryCode ? `${COUNTRY_CODE}${value}` : `0${value}`;
+  }
+  if (value.substring(0, 1) === '0') {
+    return isCountryCode
+      ? `${COUNTRY_CODE}${value.substring(1, 10)}`
+      : `${value.substring(0, 10)}`;
+  }
+  return isCountryCode
+    ? `${COUNTRY_CODE}${value.substring(0, 9)}`
+    : `0${value.substring(0, 9)}`;
+};

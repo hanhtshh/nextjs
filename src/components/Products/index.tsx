@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
-import * as React from "react";
-import { isChrome, isEdge, isWindows, isMacOs } from "react-device-detect";
+import * as React from 'react';
+import { isChrome, isEdge, isWindows, isMacOs } from 'react-device-detect';
 
-import styles from "./styles.module.css";
-import Image from "next/image";
-import CounterLottie from "../CounterLottie";
-import SectionTitle from "../SectionTitle";
-import { WrapImage } from "../WrapImage";
+import styles from './styles.module.css';
+import Image from 'next/image';
+import CounterLottie from '../CounterLottie';
+import SectionTitle from '../SectionTitle';
+import { WrapImage } from '../WrapImage';
 
 const Products = () => {
   const productRef = React.useRef<any>(null);
@@ -15,7 +15,7 @@ const Products = () => {
     if (productRef?.current) {
       let height = window.innerHeight;
       let rect = productRef.current.getBoundingClientRect();
-      if (rect.top - height / 2  < 0) {
+      if (rect.top - height / 2 < 0) {
         setShowProduct(true);
         //  window.removeEventListener("scroll", handleScroll);
       } else {
@@ -24,24 +24,24 @@ const Products = () => {
     }
   };
   React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   return (
-    <div className={styles.productsContainer} id="productsContainer">
+    <div className={styles.productsContainer} id='productsContainer'>
       <div className={styles.productsHeader}>
-        {/* <SectionTitle title="products.title" /> */}
+        <SectionTitle title='products.title' />
       </div>
       <CounterLottie />
       <div className={styles.productsAnimateContainer} ref={productRef}>
         <WrapImage
           desktop={{
-            src: "/images/products1.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
+            src: '/images/products1.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
             className: showProduct
               ? `${styles.products} ${styles.product1} ${styles.show}`
               : `${styles.products} ${styles.product1}`,
@@ -50,11 +50,11 @@ const Products = () => {
 
         <WrapImage
           desktop={{
-            src: "/images/products2.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
-            id: "products2",
+            src: '/images/products2.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
+            id: 'products2',
             className: showProduct
               ? `${styles.products} ${styles.product2}  ${styles.show}`
               : `${styles.products} ${styles.product2}`,
@@ -63,11 +63,11 @@ const Products = () => {
 
         <WrapImage
           desktop={{
-            src: "/images/products3.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
-            id: "products3",
+            src: '/images/products3.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
+            id: 'products3',
             className: showProduct
               ? `${styles.products} ${styles.product3} ${styles.show}`
               : `${styles.products} ${styles.product3}`,
@@ -76,11 +76,11 @@ const Products = () => {
 
         <WrapImage
           desktop={{
-            src: "/images/products4.png",
-            alt: "",
-            layout: "fill",
-            objectFit: "cover",
-            id: "products4",
+            src: '/images/products4.png',
+            alt: '',
+            layout: 'fill',
+            objectFit: 'cover',
+            id: 'products4',
             className: showProduct
               ? `${styles.products} ${styles.product4} ${styles.show}`
               : `${styles.products} ${styles.product4}`,

@@ -642,7 +642,7 @@ h1 {
   font-weight: 400;
 }
 
-#fast-delivery-card{
+#fast-delivery-card {
   padding-bottom: 10rem;
   margin-bottom: 70vh;
 }
@@ -652,12 +652,8 @@ h1 {
 #offer-card {
   margin-top: 0 !important;
 }
-@media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #fast-delivery-card{
-      margin-bottom: 10vh;
-    }
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #fast-delivery-card {
+    margin-bottom: 10vh;
+  }
 }

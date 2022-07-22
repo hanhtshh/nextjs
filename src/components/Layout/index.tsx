@@ -1,6 +1,6 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import styles from "./styles.module.css";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import styles from './styles.module.css';
 
 const Layout = ({ children }: any) => <>{children}</>;
 

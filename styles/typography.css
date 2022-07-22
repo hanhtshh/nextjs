@@ -1,19 +1,97 @@
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  src: url('../fonts/AvertaStdCY-Regular.otf');
+  font-display: fallback;
+}
 
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  src: url('../fonts/AvertaStdCY-Bold.otf');
+  font-display: fallback;
+}
 
- @font-face {
-    font-family: "AvertaStdCY-Regular";
-    src: url("../fonts/AvertaStdCY-Regular.otf");
-    font-display: fallback;
-  }
-  
-  @font-face {
-    font-family: "AvertaStdCY-Bold";
-    src: url("../fonts/AvertaStdCY-Bold.otf");
-    font-display: fallback;
-  }
-  
-  @font-face {
-    font-family: "Graphik-Demibold";
-    src: url("../fonts/Direction-Graphik-Bold.otf");
-    font-display: fallback;
-  }
+@font-face {
+  font-family: 'Graphik-Demibold';
+  src: url('../fonts/Direction-Graphik-Bold.otf');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY-Extrabold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Extrabold'), local('AvertaStdCY Extrabold'),
+    url('../fonts/AvertaStdCY-Extrabold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY-Semibold';
+  font-weight: 600;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold2'), local('AvertaStdCY Bold2'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCYR';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCYB';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvertaStdCYS';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+  font-display: swap;
+}

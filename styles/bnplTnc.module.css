@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'AvertaStdCY-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Bold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Extrabold';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Extrabold'), local('AvertaStdCY Extrabold'),
+    url('../fonts/AvertaStdCY-Extrabold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY-Semibold';
+  font-weight: 600;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold2'), local('AvertaStdCY Bold2'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 400;
+  font-style: normal;
+  src: local('AvertaStdCY-Regular'), local('AvertaStdCY-Regular'),
+    url('../fonts/AvertaStdCY-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 800;
+  font-style: bold;
+  src: local('AvertaStdCY-Bold'), local('AvertaStdCY Bold'),
+    url('../fonts/AvertaStdCY-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvertaStdCY';
+  font-weight: 600;
+  font-style: semibold;
+  src: local('AvertaStdCY-Semibold'), local('AvertaStdCY Semibold'),
+    url('../fonts/AvertaStdCY-Semibold.otf') format('opentype');
+}
+
+.container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 20px;
+  font-family: 'AvertaStdCY-Regular' !important;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.logo {
+  width: 60px;
+  height: 24px;
+  position: relative;
+  display: block;
+}
+
+.headline {
+  color: #1e2e3d;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+
+.contentContainer {
+  text-align: left;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+}
+
+.contentParagraph {
+  margin: 20px 0;
+}
+
+.contentHeadline {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.footer {
+  margin-top: 40px;
+  font-style: italic;
+}

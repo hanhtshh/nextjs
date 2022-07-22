@@ -1,219 +1,221 @@
 .mainPageContainer {
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    width: 100%;
-      margin: 0 auto;
-      position: relative;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.heroBannerWrapper {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 1px);
+}
+.mainPgaeContentWrapper {
+  position: absolute;
+  background-color: #ffffff;
+  top: 100vh;
+  width: 100%;
+  left: 0;
+  margin: 0 auto;
+}
+.fixedHeaderDummyPadding {
+  position: fixed;
+  top: 0;
+  height: 2rem;
+  background-color: #ffffff;
+  z-index: 15;
+  width: 100%;
+  display: none;
+}
+.verticalCardsContainerHeader {
+  font-family: 'AvertaStdCY-Bold';
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 26px;
+  line-height: 24px;
+  font-style: normal;
+  color: #0795ff;
+  margin: 16px 0;
+  padding: 20px 0;
+}
+
+.oneshopTitleWrapper {
+  background: linear-gradient(
+    180deg,
+    #ffffff 78.25%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 600px) {
+  .oneshopTitleWrapper {
+    margin-top: 5rem;
   }
-  
-  .heroBannerWrapper {
-    position: fixed;
-    top: 0;
-    width: calc(100% - 1px);
+}
+
+@media only screen and (max-width: 430px) {
+  .verticalCardsContainerHeader {
+    font-size: 20px;
   }
+}
+@media only screen and (max-width: 599px) {
+  .verticalCardsContainerHeader {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 951px) and (max-width: 1032px) {
   .mainPgaeContentWrapper {
     position: absolute;
-    background-color: #FFFFFF;
-    top: 100vh;
+    background-color: #ffffff;
     width: 100%;
-    left: 0;
-    margin: 0 auto;
   }
-  .fixedHeaderDummyPadding {
-    position: fixed;
-    top: 0;
-    height: 2rem;
-    background-color: #FFFFFF;
-    z-index: 15;
+}
+
+@media only screen and (min-width: 801px) and (max-width: 950px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
     width: 100%;
-    display: none;
+    top: 80vh;
   }
-  .verticalCardsContainerHeader {
-    font-family: "AvertaStdCY-Bold";
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 26px;
-    line-height: 24px;
-    font-style: normal;
-    color: #0795FF;
-    margin: 16px 0;
-    padding: 20px 0;
-  }
-  
-  .oneshopTitleWrapper {
-    background: linear-gradient(180deg, #FFFFFF 78.25%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media only screen and (min-width: 766px) and (max-width: 800px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
+    top: 75vh;
   }
-  
-  @media only screen and (max-width: 600px) {
-    .oneshopTitleWrapper {
-      margin-top: 5rem;
-    }
+}
+
+@media only screen and (min-width: 704px) and (max-width: 765px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
   }
-  
-  @media only screen and (max-width: 430px) {
-    .verticalCardsContainerHeader {
-      font-size: 20px;
-    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 703px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
   }
-  @media only screen and (max-width: 599px) {
-    .verticalCardsContainerHeader {
-      margin-top: 2rem;
-    }
+}
+
+@media only screen and (min-width: 526px) and (max-width: 699px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 90vh;
   }
-  
-  
-  @media only screen and (min-width: 951px) and (max-width: 1032px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-    }
-   }
-  
-  @media only screen and (min-width: 801px) and (max-width: 950px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 80vh;
-    }
-   }
-  
-  @media only screen and (min-width: 766px) and (max-width: 800px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 75vh;
-    }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -58px;
   }
-  
-  @media only screen and (min-width: 704px) and (max-width: 765px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-    }
+}
+
+@media only screen and (min-width: 476px) and (max-width: 525px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 80vh;
   }
-  
-  @media only screen and (min-width: 600px) and (max-width: 703px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-    }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -58px;
   }
-  
-  @media only screen and (min-width: 526px) and (max-width: 699px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 92vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.8%
-    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 475px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 75vh;
   }
-  
-  @media only screen and (min-width: 476px) and (max-width: 525px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 82vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.8%
-    }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -58px;
   }
-  
-  @media only screen and (min-width: 426px) and (max-width: 475px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 77vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.8%
-    }
+}
+
+@media only screen and (min-width: 377px) and (max-width: 425px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 75vh;
   }
-  
-  @media only screen and (min-width: 376px) and (max-width: 425px){
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 77vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.75%
-    }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -55px;
   }
-  
-  @media only screen and (min-width: 300px) and (max-width: 375px){
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 82vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.75%
-    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 376px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 80vh;
   }
-  
-  @media only screen and (max-width: 299px) {
-    .mainPgaeContentWrapper {
-      position: absolute;
-      background-color: #FFFFFF;
-      width: 100%;
-      top: 80vh;
-    }
-    .topAdjuster {
-      position: absolute;
-      width: 100%;
-      top: -0.7%
-    }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -55px;
   }
-  
-  .dummyShadow {
-  background: linear-gradient(180deg, rgba(219, 240, 255, 0) 0%, #DBF0FF 19.57%);
+}
+
+@media only screen and (max-width: 299px) {
+  .mainPgaeContentWrapper {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top: 78vh;
+  }
+  .topAdjuster {
+    position: absolute;
+    width: 100%;
+    top: -55px;
+  }
+}
+
+.dummyShadow {
+  background: linear-gradient(
+    180deg,
+    rgba(219, 240, 255, 0) 0%,
+    #dbf0ff 19.57%
+  );
   width: 50%;
   z-index: 2;
   height: 300px;
   position: sticky;
   display: none;
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .mainPgaeContentWrapper {
+    top: 66vh;
   }
-  @media only screen 
-    and (min-device-width: 1024px) 
-    and (max-device-width: 1024px) 
-    and (orientation: portrait) 
-    and (-webkit-min-device-pixel-ratio: 2) {
-      .mainPgaeContentWrapper {
-        top: 70vh;
-      }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) and (min-height: 1000px) and (max-height: 1400px) {
+  .mainPgaeContentWrapper {
+    top: 45vh;
   }
-  
-  @media screen and (min-width: 800px) and (max-width: 1000px) and (min-height:1000px) and (max-height: 1400px) {
-    .mainPgaeContentWrapper {
-      top: 45vh;
-    }
-  }
-  
+}

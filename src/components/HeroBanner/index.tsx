@@ -1,51 +1,28 @@
-/* eslint-disable no-console */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React, { useState, useEffect, useCallback } from "react";
-import { T } from "../../hooks/translation";
-import { useWindowWidth } from "../../hooks/useWindowWidthHook";
-import styles from "./styles.module.css";
+import { useRouter } from 'next/router';
+import React, { useState, useEffect, useCallback } from 'react';
+import { T } from '../../hooks/translation';
+import { useWindowWidth } from '../../hooks/useWindowWidthHook';
+import styles from './styles.module.css';
 
-// import { StaticImage, } from 'gatsby-plugin-image';
-// import { useIntl, } from 'gatsby-plugin-intl';
-// import { changeLocale, } from '../utils';
-import { languages } from "../../constants";
-import DropDownToolTip from "../DropDownToolTip";
-import { WrapImage } from "../WrapImage";
-// import * as styles from '../css/heroBanner.module.css';
-// import DropDownToolTip from './dropDownToolTip';
-// import useWindowWidth from '../hooks/useWindowWidthHook';
+import { languages } from '../../constants';
+import DropDownToolTip from '../DropDownToolTip';
+import { WrapImage } from '../WrapImage';
+import { StoreContext } from '../../utils/store';
 
 function HeroBanner() {
   const [isDropDownVisible, setDropDownVisible] = useState(false);
   const [renderContent, setRenderContent] = useState(false);
+  const { trans }: any = React.useContext(StoreContext);
 
   const width = useWindowWidth();
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setRenderContent(true);
-    }, 0);
-  }, []);
-  useEffect(() => {
-    if (isDropDownVisible) {
-      window.addEventListener("scroll", hideIfScrolledPast);
-    }
-    return () => {
-      window.removeEventListener("scroll", hideIfScrolledPast);
-    };
-  }, [isDropDownVisible]);
-
   const hideIfScrolledPast = useCallback(() => {
     if (!isDropDownVisible) {
       return;
     }
     // To hide language dropdown if hdropdown is scrolled past by main page
-    const mainPageContainer = document.getElementById("mainPageContainer");
+    const mainPageContainer = document.getElementById('mainPageContainer');
     if (!mainPageContainer) {
       return;
     }
@@ -54,6 +31,20 @@ function HeroBanner() {
       setDropDownVisible(false);
     }
   }, [isDropDownVisible]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setRenderContent(true);
+    }, 0);
+  }, []);
+  useEffect(() => {
+    if (isDropDownVisible) {
+      window.addEventListener('scroll', hideIfScrolledPast);
+    }
+    return () => {
+      window.removeEventListener('scroll', hideIfScrolledPast);
+    };
+  }, [isDropDownVisible, hideIfScrolledPast]);
 
   const handleDropDownMenu = () => {
     setDropDownVisible(!isDropDownVisible);
@@ -71,7 +62,7 @@ function HeroBanner() {
     [asPath, locale, pathname, query, router, setDropDownVisible]
   );
 
-  const isVietnamese = locale === "vi";
+  const isVietnamese = locale === 'vi';
 
   const heroTextStyle = `${styles.heroText} ${styles.textShadow} ${
     isVietnamese && styles.vietnameseHeroText
@@ -81,10 +72,10 @@ function HeroBanner() {
     <div className={`${styles.heroContainer} hero-banner-container`}>
       <WrapImage
         desktop={{
-          src: "/images/telio-logo-white.png",
-          alt: "logo",
-          layout: "fill",
-          objectFit: "cover",
+          src: '/images/telio-logo-white.png',
+          alt: 'logo',
+          layout: 'fill',
+          objectFit: 'cover',
           className: styles.logo,
         }}
       />
@@ -93,10 +84,10 @@ function HeroBanner() {
           <div onClick={handleDropDownMenu}>
             <WrapImage
               desktop={{
-                src: `/images/${T("flag")}.png`,
-                alt: "",
-                layout: "fill",
-                objectFit: "cover",
+                src: `/images/${trans('flag')}.png`,
+                alt: '',
+                layout: 'fill',
+                objectFit: 'cover',
                 className: styles.flag,
               }}
             />
@@ -107,30 +98,34 @@ function HeroBanner() {
             options={languages}
             onClick={handleLanguageChange}
             onClickOutside={handleDropDownMenu}
-            id="heroBannerLanguage"
+            id='heroBannerLanguage'
           />
         )}
       </div>
       {renderContent && (
         <div className={styles.heroTextWrapper}>
           <div className={styles.heroMainTextWrapper}>
-            <span className={heroTextStyle}>{T("title.heroBanner1")}</span>
+            <span className={heroTextStyle}>{trans('title.heroBanner1')}</span>
             <span className={styles.retailerTextWrapper}>
               <span
                 className={`${styles.heroText} ${styles.heroTextGradient} ${
                   isVietnamese && styles.vietnameseHeroText
                 }`}
-                title={T("title.heroBanner2")}
+                title={trans('title.heroBanner2')}
               >
-                {T("title.heroBanner2")}
+                {trans('title.heroBanner2')}
               </span>
             </span>
             <span>
-              {router.locale === "en" && (
-                <span className={heroTextStyle}>{T("title.heroBanner4")}</span>
+              {router.locale === 'en' && (
+                <span className={heroTextStyle}>
+                  {trans('title.heroBanner4')}
+                </span>
               )}
-              {width && width > 1040 && <br />}
-              <span className={heroTextStyle}>{T("title.heroBanner3")}</span>
+              {width > 1040 && <br />}
+              <span className={heroTextStyle}>
+                {trans('title.heroBanner3')}
+              </span>
             </span>
           </div>
         </div>

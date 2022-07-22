@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useCallback } from "react";
-import styles from "./styles.module.css";
-import Dialog from "@mui/material/Dialog";
-import { useRouter } from "next/router";
-import { T } from "../../hooks/translation";
-import Image from "next/image";
-import { TELIO_BLOG, TELIO_CAREERS } from "../../constants";
+import React, { useCallback } from 'react';
+import styles from './styles.module.css';
+import Dialog from '@mui/material/Dialog';
+import { useRouter } from 'next/router';
+import { T } from '../../hooks/translation';
+import { TELIO_BLOG, TELIO_CAREERS } from '../../constants';
 import {
   openTelioAppAppStore,
   openTelioAppPlayStore,
   openTelioZalo,
-} from "../../utils";
-import { WrapImage } from "../WrapImage";
+} from '../../utils';
+import { WrapImage } from '../WrapImage';
 type MobileMenuProps = {
   showDrawer: any;
   toggleDrawer: any;
@@ -22,10 +21,6 @@ function MobileMenu({
   toggleDrawer,
   setShowDrawer,
 }: MobileMenuProps) {
-  const navigate = (href: any) => {
-    setShowDrawer(false);
-    window.location = href;
-  };
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
   const handleLanguageChange = useCallback(
@@ -37,81 +32,80 @@ function MobileMenu({
     },
     [asPath, locale, pathname, query, router, setShowDrawer]
   );
-
   return (
     <>
       <Dialog onClose={toggleDrawer(false)} open={showDrawer} fullScreen={true}>
         <div>
           <div className={styles.rowMobileMenu}>
             <div className={styles.wrapClose} onClick={toggleDrawer(false)}>
-              <div>{T("mobileMenu.close")}</div>
+              <div>{T('mobileMenu.close')}</div>
               <WrapImage
                 desktop={{
-                  src: "/images/Exit.png",
-                  alt: "Exit",
+                  src: '/images/Exit.png',
+                  alt: 'Exit',
                   className: styles.menuImage,
-                  style: { marginLeft: "4px", marginRight: "unset" },
-                  layout: "fill",
-                  objectFit: "cover",
+                  style: { marginLeft: '4px', marginRight: 'unset' },
+                  layout: 'fill',
+                  objectFit: 'cover',
                 }}
               />
             </div>
           </div>
           <div className={styles.wrapMenuContent}>
-            <div
+            <a
               className={`${styles.rowMobileMenu} ${styles.menuTitle}`}
-              onClick={() => navigate(TELIO_CAREERS + T("link"))}
+              href={TELIO_CAREERS + T('link')}
             >
-              {T("mobileMenu.careers")}
-            </div>
-            <div
+              {T('mobileMenu.careers')}
+            </a>
+            <a
               className={`${styles.rowMobileMenu} ${styles.menuTitle}`}
-              onClick={() => navigate(TELIO_BLOG + T("link"))}
+              href={TELIO_BLOG + T('link')}
             >
               blog
-            </div>
+            </a>
 
             <div className={`${styles.menuTitle}`}>
-              {T("mobileMenu.language")}
+              {T('mobileMenu.language')}
             </div>
             <div className={`${styles.rowMobileMenu} ${styles.itemList}`}>
               <div
                 className={styles.wrapMemuItem}
                 onClick={() => {
-                  handleLanguageChange("vi");
+                  handleLanguageChange('vi');
                 }}
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/VN.png",
-                    alt: "VN",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/VN.png',
+                    alt: 'VN',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.menuImage,
                   }}
                 />
-                {T("mobileMenu.vietnamese")}
+                {T('mobileMenu.vietnamese')}
               </div>
               <div
                 className={styles.wrapMemuItem}
                 onClick={() => {
-                  handleLanguageChange("en");
+                  handleLanguageChange('en');
                 }}
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/USA.png",
-                    alt: "USA",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/USA.png',
+                    alt: 'USA',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.menuImage,
                   }}
                 />
-                {T("mobileMenu.english")}
+                {T('mobileMenu.english')}
               </div>
             </div>
             <div className={`${styles.menuTitle}`}>
-              {T("mobileMenu.product")}
+              {T('mobileMenu.product')}
             </div>
             <div className={`${styles.rowMobileMenu} ${styles.itemList}`}>
               <div
@@ -120,10 +114,10 @@ function MobileMenu({
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/zalo-logo.png",
-                    alt: "USA",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/zalo-logo.png',
+                    alt: 'USA',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.menuImage,
                   }}
                 />
@@ -135,14 +129,14 @@ function MobileMenu({
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/playStoreIcon.svg",
-                    alt: "CH play",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/playStoreIcon.svg',
+                    alt: 'CH play',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.menuImage,
                   }}
                 />
-                {T("ung-dung-telio")} (Android)
+                {T('ung-dung-telio')} (Android)
               </div>
               <div
                 className={`${styles.wrapMemuItemApp} ${styles.mobileApp}`}
@@ -150,14 +144,14 @@ function MobileMenu({
               >
                 <WrapImage
                   desktop={{
-                    src: "/images/appStoreIcon.svg",
-                    alt: "APP store",
-                    layout: "fill",
-                    objectFit: "cover",
+                    src: '/images/appStoreIcon.svg',
+                    alt: 'APP store',
+                    layout: 'fill',
+                    objectFit: 'cover',
                     className: styles.menuImage,
                   }}
                 />
-                {T("ung-dung-telio")} (IOS)
+                {T('ung-dung-telio')} (IOS)
               </div>
             </div>
           </div>

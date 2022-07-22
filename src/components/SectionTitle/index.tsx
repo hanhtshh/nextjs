@@ -1,14 +1,14 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import styles from "./styles.module.css";
-import { T } from "../../hooks/translation";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import styles from './styles.module.css';
+import { T } from '../../hooks/translation';
 
 const SectionTitle = ({ title, text, subTitleColor }: any) => {
   return (
     <>
       <span className={styles.sectionTitle}>{T(title)}</span>
       <span className={styles.sectionText} style={{ color: subTitleColor }}>
-        {text ? T(text) : ""}
+        {text ? T(text) : ''}
       </span>
     </>
   );
@@ -16,7 +16,7 @@ const SectionTitle = ({ title, text, subTitleColor }: any) => {
 
 SectionTitle.defaultProps = {
   text: null,
-  subTitleColor: "#646B72",
+  subTitleColor: '#646B72',
 };
 
 SectionTitle.propTypes = {
