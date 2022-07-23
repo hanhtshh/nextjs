@@ -25,14 +25,32 @@ const CounterLottie = ({ toTop }: CounterLottieProps) => {
     }
     return lottie;
   };
-  useEffect(() => {
-    if (toTop >= 1 && (lottieRef.current as any)?.play) {
-      setTimeout(() => {
+  const playLottie = () => {
+    if (lottieRef.current.animationContainerRef.current) {
+      let rect =
+        lottieRef.current?.animationContainerRef.current.getBoundingClientRect();
+      let heigth = window.innerHeight;
+      if (rect.top - heigth + 200 < 0 && (lottieRef.current as any)?.play) {
         (lottieRef.current as any).setSpeed(2);
         (lottieRef.current as any).play();
-      }, 700);
+      }
     }
-  }, [toTop]);
+  };
+  useEffect(() => {
+    if (width > 1132) {
+      if (toTop >= 1 && (lottieRef.current as any)?.play) {
+        setTimeout(() => {
+          (lottieRef.current as any).setSpeed(2);
+          (lottieRef.current as any).play();
+        }, 700);
+      }
+    } else {
+      window.addEventListener('scroll', playLottie, { passive: true });
+      return () => {
+        window.removeEventListener('scroll', playLottie);
+      };
+    }
+  }, [toTop, width]);
   return (
     <>
       {width > 700 && (

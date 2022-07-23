@@ -74,7 +74,7 @@ const IndexPage = () => {
     }
   };
   useEffect(() => {
-    if (width > 960) {
+    if (width > 1132) {
       window.addEventListener('wheel', handleScroll);
     }
     return () => {
@@ -86,20 +86,24 @@ const IndexPage = () => {
     <>
       <Seo title='Telio' />
       <main>
-        <div
-          className={styles.mainPageContainer}
-          style={{ overflow: 'hidden', height: '100vh' }}
-        >
+        <div className={styles.mainPageContainer}>
           <div className={styles.heroBannerWrapper}>
             <HeroBanner />
           </div>
           <div
             className={`${styles.mainPgaeContentWrapper} main-page-container`}
-            style={{ top: `${-toTop * 100}vh`, transition: '0.7s' }}
+            style={
+              width > 1132
+                ? {
+                    top: `${-toTop * 100}vh`,
+                    transition: 'all 700ms ease 0s',
+                  }
+                : {}
+            }
           >
             {width > 700 && (
               <>
-                <DynamicFixedHeader toTop={toTop}/>
+                <DynamicFixedHeader toTop={toTop} />
               </>
             )}
             {width <= 700 && (

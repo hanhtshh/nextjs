@@ -73,6 +73,20 @@
     top: 30px;
   }
 }
+@media (max-width: 1132px) {
+  .productsAnimateContainer {
+    width: 90%;
+    position: relative;
+    /* overflow: hidden; */
+    justify-content: center;
+    /* transform-style: preserve-3d; */
+    height: 0;
+    padding-bottom: 60%;
+  }
+  .productsContainer {
+    overflow: hidden;
+  }
+}
 /* .allProducts {
   z-index: 5;
   opacity: 0;

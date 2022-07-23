@@ -7,23 +7,42 @@ import Image from 'next/image';
 import CounterLottie from '../CounterLottie';
 import SectionTitle from '../SectionTitle';
 import { WrapImage } from '../WrapImage';
+import { useWindowWidth } from '../../hooks/useWindowWidthHook';
 type ProductsProps = {
   toTop: number;
 };
 const Products = ({ toTop }: ProductsProps) => {
   const productRef = React.useRef<any>(null);
   const [showProduct, setShowProduct] = React.useState(true);
-  React.useEffect(() => {
-    if (toTop >= 1) {
-      setTimeout(() => {
+  const width = useWindowWidth();
+  const handleScroll = (event: any) => {
+    if (productRef?.current) {
+      let height = window.innerHeight;
+      let rect = productRef.current.getBoundingClientRect();
+      if (rect.top - height / 2 < 0) {
         setShowProduct(true);
-      }, 700);
-    } else {
-      setTimeout(() => {
+        //  window.removeEventListener("scroll", handleScroll);
+      } else {
         setShowProduct(false);
-      }, 700);
+      }
     }
-  }, [toTop]);
+  };
+  React.useEffect(() => {
+    if (width > 1132) {
+      toTop >= 1
+        ? setTimeout(() => {
+            setShowProduct(true);
+          }, 700)
+        : setTimeout(() => {
+            setShowProduct(false);
+          }, 700);
+    } else {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [toTop,width]);
   return (
     <div className={styles.productsContainer} id='productsContainer'>
       <div className={styles.productsHeader}>

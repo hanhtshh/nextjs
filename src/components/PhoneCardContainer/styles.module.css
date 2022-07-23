@@ -170,3 +170,8 @@
   display: block;
   position: relative;
 }
+@media (max-width: 1132px) {
+  .phoneCardsWrapper {
+    height: unset;
+  }
+}

@@ -99,3 +99,8 @@
     width: 350px;
   }
 }
+@media (max-width: 1132px) {
+  .reviewsSection {
+    height: unset;
+  }
+}
