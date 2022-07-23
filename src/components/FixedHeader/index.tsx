@@ -30,8 +30,11 @@ const FixedHeader = ({ toTop }: FixedHeaderProps) => {
     useState(false);
   const headerRef = useRef<any>(null);
   const heroTextRef = useRef<any>(null);
-  const [showHeader, setShowHeader] = useState(false);
   const [showHero, setShowHero] = useState(true);
+  const [state, setState] = useState({
+    showHeader: false,
+    fixedHeader: false,
+  });
 
   const router = useRouter();
   const { locale, pathname, query, asPath } = router;
@@ -53,31 +56,42 @@ const FixedHeader = ({ toTop }: FixedHeaderProps) => {
   }, [isDropDownVisible]);
   const toggleDownloadDropDown = useCallback(() => {
     setDownloadDropDownVisible((currentValue) => !currentValue);
-    toTop < 0
-      ? setCheckDropDown(true)
-      : setCheckDropDown(false);
+    toTop < 0 ? setCheckDropDown(true) : setCheckDropDown(false);
   }, [toTop]);
 
   useEffect(() => {
     if (toTop >= 0) {
       setTimeout(() => {
-        setShowHeader(true);
-      }, 400);
+        setState((state) => ({
+          ...state,
+          showHeader: true,
+        }));
+      }, 200);
       setTimeout(() => {
         setShowHero(false);
       }, 200);
+      setTimeout(() => {
+        setState((state) => ({
+          ...state,
+          fixedHeader: true,
+        }));
+      }, 650);
     } else {
-      setShowHeader(false);
+      setState((state) => ({
+        ...state,
+        showHeader: false,
+        fixedHeader: false,
+      }));
       setTimeout(() => {
         setShowHero(true);
       }, 200);
     }
   }, [toTop]);
-  const show = showHeader ? styles.show : '';
-
+  const show2 = state.fixedHeader ? styles.show2 : '';
+  const show = state.showHeader ? styles.show : '';
   return (
     <div className={`${styles.fixedHeaderWrapper}`} ref={headerRef}>
-      <div className={`${styles.fixedHeaderContainerBox} ${show}`}>
+      <div className={`${styles.fixedHeaderContainerBox} ${show} ${show2}`}>
         <div className={`${styles.fixedHeaderContainer} ${show}`}>
           <span
             className={`${styles.heroSubText} ${showHero ? styles.show : ''}`}
@@ -159,7 +173,7 @@ const FixedHeader = ({ toTop }: FixedHeaderProps) => {
                   layout: 'fill',
                   objectFit: 'cover',
                   className: `${styles.headerIcons} fixed-header-zalo-logos ${
-                    showHeader ? styles.show : ''
+                    state.showHeader ? styles.show : ''
                   }`,
                 }}
               />

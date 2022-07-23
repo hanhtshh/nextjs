@@ -57,8 +57,8 @@
   position: relative;
   bottom: 3px;
 }
-@media(max-width:1132px){
-  .investorsSection{
+@media (max-width: 1132px) {
+  .investorsSection {
     height: 650px;
   }
 }
@@ -132,8 +132,8 @@
     margin-bottom: 236px;
   }
 }
-@media(min-width:1132px){
-  .investorsSection{
+@media (min-width: 1132px) {
+  .investorsSection {
     height: 100vh;
     justify-content: center;
   }

@@ -54,7 +54,9 @@
   justify-content: center;
   z-index: 10;
 }
-
+.footerWrapper {
+  height: 100vh;
+}
 @media only screen and (max-width: 600px) {
   .oneshopTitleWrapper {
     margin-top: 5rem;
@@ -226,6 +228,6 @@
     overflow: unset;
   }
   .footerWrapper {
-    height: 100vh;
+    height: unset;
   }
 }

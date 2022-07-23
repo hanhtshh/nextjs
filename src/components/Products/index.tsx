@@ -42,7 +42,7 @@ const Products = ({ toTop }: ProductsProps) => {
         window.removeEventListener('scroll', handleScroll);
       };
     }
-  }, [toTop,width]);
+  }, [toTop, width]);
   return (
     <div className={styles.productsContainer} id='productsContainer'>
       <div className={styles.productsHeader}>

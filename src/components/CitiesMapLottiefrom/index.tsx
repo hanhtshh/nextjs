@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 import cityMapLottie from '../../constants/animations/city_map_lottie.json';
 import Lottie from 'lottie-react';
 
-const CitiesMapLottie = ({toTop}:any) => {
+const CitiesMapLottie = ({ toTop }: any) => {
   const width = useWindowWidth();
   const lottieRef = useRef<any>(null);
   const title = T('citiesMap.title');
@@ -26,7 +26,7 @@ const CitiesMapLottie = ({toTop}:any) => {
           <div className={styles.headerContainer}>
             <span className={styles.mapHeader}>{title}</span>
           </div>
-          <div className={styles.lottiePlayerWrapper} >
+          <div className={styles.lottiePlayerWrapper}>
             <Lottie
               animationData={cityMapLottie}
               lottieRef={lottieRef}

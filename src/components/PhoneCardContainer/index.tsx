@@ -17,7 +17,7 @@ const PhoneCardContainer = ({ toTop }: PhoneCardContainerProps) => {
   const [fixedCard, setFixedCard] = useState(0);
   useEffect(() => {
     if (toTop >= 2 && toTop <= 4) {
-      setTimeout(() => setFixedCard(1), 698);
+      setTimeout(() => setFixedCard(1), 650);
     } else if (toTop > 4) {
       setTimeout(() => setFixedCard(2), 0);
     } else {
