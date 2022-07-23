@@ -16,7 +16,7 @@
 }
 .fixedHeaderContainerBox.show {
   position: fixed;
-  top: 20px;
+  top: 2vh;
 }
 .fixedHeaderContainer {
   height: 70px;
@@ -26,7 +26,7 @@
   border-radius: 100px;
   position: relative;
   direction: rtl;
-  transition: 0.5s;
+  transition: 0.7s;
 }
 .fixedHeaderContainer.show {
   width: 95%;

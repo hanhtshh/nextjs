@@ -16,7 +16,6 @@ const PhoneCardContainer = ({ toTop }: PhoneCardContainerProps) => {
   const fixZaloButtonRef = useRef<any>(null);
   const [fixedCard, setFixedCard] = useState(0);
   useEffect(() => {
-    console.log(toTop);
     if (toTop >= 2 && toTop <= 4) {
       setTimeout(() => setFixedCard(1), 698);
     } else if (toTop > 4) {
@@ -28,7 +27,6 @@ const PhoneCardContainer = ({ toTop }: PhoneCardContainerProps) => {
   const show = fixedCard == 1 ? styles.show : '';
   const show1 = fixedCard == 1 ? styles.show1 : '';
   const show2 = fixedCard == 2 ? styles.show2 : '';
-  console.log(fixedCard);
   return (
     <div
       className={`${styles.phoneCardContainer} ${show}`}

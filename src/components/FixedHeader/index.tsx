@@ -21,8 +21,10 @@ const onStoreSelect = (event: any) => {
     ? openTelioAppAppStore()
     : openTelioAppPlayStore();
 };
-
-const FixedHeader = () => {
+type FixedHeaderProps = {
+  toTop: number;
+};
+const FixedHeader = ({ toTop }: FixedHeaderProps) => {
   const [isDropDownVisible, setDropDownVisible] = useState(false);
   const [isDownloadDropDownVisible, setDownloadDropDownVisible] =
     useState(false);
@@ -51,26 +53,26 @@ const FixedHeader = () => {
   }, [isDropDownVisible]);
   const toggleDownloadDropDown = useCallback(() => {
     setDownloadDropDownVisible((currentValue) => !currentValue);
-    window.pageYOffset - 150 < 0
+    toTop < 0
       ? setCheckDropDown(true)
       : setCheckDropDown(false);
-  }, []);
-  const handleScroll = () => {
-    if (heroTextRef?.current) {
-      let rect = heroTextRef?.current?.getBoundingClientRect();
-      rect.top - 100 < 0 ? setShowHero(false) : setShowHero(true);
-    }
-    if (headerRef?.current) {
-      let rect = headerRef?.current?.getBoundingClientRect();
-      rect.top - 130 < 0 ? setShowHeader(true) : setShowHeader(false);
-    }
-  };
+  }, [toTop]);
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (toTop >= 0) {
+      setTimeout(() => {
+        setShowHeader(true);
+      }, 400);
+      setTimeout(() => {
+        setShowHero(false);
+      }, 200);
+    } else {
+      setShowHeader(false);
+      setTimeout(() => {
+        setShowHero(true);
+      }, 200);
+    }
+  }, [toTop]);
   const show = showHeader ? styles.show : '';
 
   return (

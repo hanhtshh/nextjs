@@ -8,25 +8,17 @@ import styles from './styles.module.css';
 import cityMapLottie from '../../constants/animations/city_map_lottie.json';
 import Lottie from 'lottie-react';
 
-const interactivity: any = {
-  mode: 'scroll',
-  actions: [
-    {
-      visibility: [0.12, 0.6],
-      type: 'seek',
-      frames: [0, 200],
-    },
-    {
-      visibility: [0.6, 1],
-      type: 'stop',
-      frames: [200],
-    },
-  ],
-};
-const CitiesMapLottie = () => {
+const CitiesMapLottie = ({toTop}:any) => {
   const width = useWindowWidth();
   const lottieRef = useRef<any>(null);
   const title = T('citiesMap.title');
+  useEffect(() => {
+    if (toTop >= 5 && (lottieRef.current as any)?.play) {
+      setTimeout(() => {
+        (lottieRef.current as any).play();
+      }, 700);
+    }
+  }, [toTop]);
   return (
     <>
       {width > 700 && (
@@ -34,11 +26,12 @@ const CitiesMapLottie = () => {
           <div className={styles.headerContainer}>
             <span className={styles.mapHeader}>{title}</span>
           </div>
-          <div className={styles.lottiePlayerWrapper} ref={lottieRef}>
+          <div className={styles.lottiePlayerWrapper} >
             <Lottie
               animationData={cityMapLottie}
               lottieRef={lottieRef}
-              interactivity={interactivity}
+              autoPlay={false}
+              loop={false}
             />
           </div>
         </div>

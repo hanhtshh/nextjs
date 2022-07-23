@@ -52,7 +52,6 @@ const DynamicCitiesMapLottie = dynamic(
 const IndexPage = () => {
   const width = useWindowWidth();
   const [showHeader, setShowHeader] = useState(false);
-  const lastScrollTop = useRef<number>(0);
   const checkScroll = useRef<boolean>(false);
   const [toTop, setToTop] = useState(-1);
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
@@ -63,7 +62,7 @@ const IndexPage = () => {
       // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
       var st = e.deltaY;
       if (st > 0) {
-        setToTop((toTop) => (toTop < 10 ? toTop + 1 : toTop));
+        setToTop((toTop) => (toTop < 9 ? toTop + 1 : toTop));
       } else {
         setToTop((toTop) => (toTop > -1 ? toTop - 1 : toTop));
       }
@@ -100,7 +99,7 @@ const IndexPage = () => {
           >
             {width > 700 && (
               <>
-                <DynamicFixedHeader />
+                <DynamicFixedHeader toTop={toTop}/>
               </>
             )}
             {width <= 700 && (
@@ -121,13 +120,15 @@ const IndexPage = () => {
               {width <= 800 && <DynamicPhoneCardContainerMobile />}
               {/* <ZaloDownload selector="zalo-app-download-container" /> */}
             </div>
-            <DynamicCitiesMapLottie />
+            <DynamicCitiesMapLottie toTop={toTop} />
             {width > 700 && <TelioBooksBanner />}
             {width <= 700 && <TelioBooksBannerMobile />}
             <Reviews />
             <Investors />
-            <FooterBanner />
-            <Footer />
+            <div className={styles.footerWrapper}>
+              <FooterBanner />
+              <Footer />
+            </div>
           </div>
         </div>
       </main>
