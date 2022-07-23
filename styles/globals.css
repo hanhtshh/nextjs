@@ -7,6 +7,9 @@ html {
   width: 100%;
   margin: 0 auto;
 }
+html::-webkit-scrollbar{
+  display: none;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -642,10 +645,6 @@ h1 {
   font-weight: 400;
 }
 
-#fast-delivery-card {
-  padding-bottom: 10rem;
-  margin-bottom: 70vh;
-}
 #genuine-product-card {
   margin-bottom: 0 !important;
 }

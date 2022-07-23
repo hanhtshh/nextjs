@@ -10,7 +10,7 @@ import { WrapImage } from '../WrapImage';
 
 const Products = () => {
   const productRef = React.useRef<any>(null);
-  const [showProduct, setShowProduct] = React.useState(false);
+  const [showProduct, setShowProduct] = React.useState(true);
   const handleScroll = (event: any) => {
     if (productRef?.current) {
       let height = window.innerHeight;

@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/index.module.css';
 import { useWindowWidth } from '../src/hooks/useWindowWidthHook';
 import HeroBanner from '../src/components/HeroBanner';
@@ -52,17 +52,51 @@ const DynamicCitiesMapLottie = dynamic(
 const IndexPage = () => {
   const width = useWindowWidth();
   const [showHeader, setShowHeader] = useState(false);
+  const lastScrollTop = useRef<number>(0);
+  const checkScroll = useRef<boolean>(false);
+  const [toTop, setToTop] = useState(1);
+  // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+  const handleScroll = (e: any) => {
+    // or window.addEventListener("scroll"....
+
+    if (!checkScroll.current) {
+      // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      var st = e.deltaY;
+      if (st > 0) {
+        setToTop((toTop) => (toTop < 10 ? toTop + 1 : toTop));
+      } else {
+        setToTop((toTop) => (toTop > -1 ? toTop - 1 : toTop));
+      }
+      // For Mobile or negative scrolling
+      checkScroll.current = true;
+      setTimeout(() => {
+        checkScroll.current = false;
+      }, 700);
+    }
+  };
+  useEffect(() => {
+    if (width > 960) {
+      window.addEventListener('wheel', handleScroll);
+    }
+    return () => {
+      window.removeEventListener('weel', handleScroll);
+    };
+  }, [width]);
 
   return (
     <>
       <Seo title='Telio' />
       <main>
-        <div className={styles.mainPageContainer}>
+        <div
+          className={styles.mainPageContainer}
+          style={{ overflow: 'hidden', height: '100vh' }}
+        >
           <div className={styles.heroBannerWrapper}>
             <HeroBanner />
           </div>
           <div
             className={`${styles.mainPgaeContentWrapper} main-page-container`}
+            style={{ top: `${-toTop * 100}vh`, transition: '0.7s' }}
           >
             {width > 700 && (
               <>
@@ -83,7 +117,7 @@ const IndexPage = () => {
             <Products />
 
             <div className='zalo-app-container'>
-              {width > 800 && <DynamicPhoneCardContainer />}
+              {width > 800 && <DynamicPhoneCardContainer  toTop={toTop}/>}
               {width <= 800 && <DynamicPhoneCardContainerMobile />}
               {/* <ZaloDownload selector="zalo-app-download-container" /> */}
             </div>

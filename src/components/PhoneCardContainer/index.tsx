@@ -8,44 +8,27 @@ import { T } from '../../hooks/translation';
 import { ZALO_LINK } from '../../constants';
 import { WrapImage } from '../WrapImage';
 import TelioZaloApp from '../TelioZaloApp';
-const PhoneCardContainer = () => {
+type PhoneCardContainerProps = {
+  toTop: number;
+};
+const PhoneCardContainer = ({ toTop }: PhoneCardContainerProps) => {
   const phoneCardConatinerRef = useRef<any>(null);
   const fixZaloButtonRef = useRef<any>(null);
-  const [image1Show, setImage1Show] = useState(false);
-  const [image2Show, setImage2Show] = useState(false);
-  const [fixedCard, setFixedCard] = useState(false);
-  const [fixedZaloButton, setFixedZaloButton] = useState(false);
-  const [endScroll, setEndScroll] = useState(false);
-  const handleScroll = () => {
-    if (phoneCardConatinerRef.current) {
-      let rect = phoneCardConatinerRef.current.getBoundingClientRect();
-      rect.top - 20 < 0 ? setFixedCard(true) : setFixedCard(false);
-
-      rect.bottom - window.innerHeight + 20 < 0
-        ? setEndScroll(true)
-        : setEndScroll(false);
-
-      rect.top + 800 - window.innerHeight / 2 < 0
-        ? setImage1Show(true)
-        : setImage1Show(false);
-      rect.top + 1600 - window.innerHeight / 2 < 0
-        ? setImage2Show(true)
-        : setImage2Show(false);
-    }
-    if (fixZaloButtonRef.current) {
-      let rect1 = fixZaloButtonRef.current.getBoundingClientRect();
-      rect1.top - 20 < 0 ? setFixedZaloButton(true) : setFixedZaloButton(false);
-    }
-  };
+  const [fixedCard, setFixedCard] = useState(0);
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  const show = fixedCard ? styles.show : '';
-  const show1 = fixedZaloButton ? styles.show1 : '';
-  const show2 = endScroll ? styles.show2 : '';
+    console.log(toTop)
+    if (toTop >= 2 && toTop <= 4) {
+      setTimeout(() => setFixedCard(1), 698);
+    } else if (toTop > 4) {
+      setTimeout(() => setFixedCard(2), 0);
+    } else {
+      setTimeout(() => setFixedCard(0), 0);
+    }
+  }, [toTop]);
+  const show = fixedCard == 1 ? styles.show : '';
+  const show1 = fixedCard == 1 ? styles.show1 : '';
+  const show2 = fixedCard == 2 ? styles.show2 : '';
+  console.log(fixedCard)
   return (
     <div
       className={`${styles.phoneCardContainer} ${show}`}
@@ -177,9 +160,9 @@ const PhoneCardContainer = () => {
         id='phone-card'
       >
         <TelioZaloApp
-          fixedCard={fixedCard}
-          image1Show={image1Show}
-          image2Show={image2Show}
+          fixedCard={fixedCard==1}
+          image1Show={toTop>=3}
+          image2Show={toTop>=4}
         />
       </div>
     </div>
