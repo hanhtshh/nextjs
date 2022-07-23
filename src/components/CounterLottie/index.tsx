@@ -10,22 +10,13 @@ import counterLottieMobileEn from '../../constants/animations/counter_lottie_mob
 import Lottie from 'lottie-react';
 // eslint-disable-next-line max-len
 import styles from './styles.module.css';
-const CounterLottie = () => {
+type CounterLottieProps = {
+  toTop: number;
+};
+const CounterLottie = ({ toTop }: CounterLottieProps) => {
   const width = useWindowWidth();
   const lottieRef = useRef<any>(null);
   const { locale } = useRouter();
-
-  const playLottie = () => {
-    if (lottieRef.current.animationContainerRef.current) {
-      let rect =
-        lottieRef.current?.animationContainerRef.current.getBoundingClientRect();
-      let heigth = window.innerHeight;
-      if (rect.top - heigth + 200 < 0 && (lottieRef.current as any)?.play) {
-        (lottieRef.current as any).setSpeed(2);
-        (lottieRef.current as any).play();
-      }
-    }
-  };
 
   const setLottieURL = (isMobile: boolean) => {
     let lottie: any = locale === 'vi' ? counterLottieVi : counterLottieEn;
@@ -35,11 +26,13 @@ const CounterLottie = () => {
     return lottie;
   };
   useEffect(() => {
-    window.addEventListener('scroll', playLottie, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', playLottie);
-    };
-  }, []);
+    if (toTop >= 1 && (lottieRef.current as any)?.play) {
+      setTimeout(() => {
+        (lottieRef.current as any).setSpeed(2);
+        (lottieRef.current as any).play();
+      }, 700);
+    }
+  }, [toTop]);
   return (
     <>
       {width > 700 && (

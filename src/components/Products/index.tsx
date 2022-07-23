@@ -7,34 +7,29 @@ import Image from 'next/image';
 import CounterLottie from '../CounterLottie';
 import SectionTitle from '../SectionTitle';
 import { WrapImage } from '../WrapImage';
-
-const Products = () => {
+type ProductsProps = {
+  toTop: number;
+};
+const Products = ({ toTop }: ProductsProps) => {
   const productRef = React.useRef<any>(null);
   const [showProduct, setShowProduct] = React.useState(true);
-  const handleScroll = (event: any) => {
-    if (productRef?.current) {
-      let height = window.innerHeight;
-      let rect = productRef.current.getBoundingClientRect();
-      if (rect.top - height / 2 < 0) {
-        setShowProduct(true);
-        //  window.removeEventListener("scroll", handleScroll);
-      } else {
-        setShowProduct(false);
-      }
-    }
-  };
   React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (toTop >= 1) {
+      setTimeout(() => {
+        setShowProduct(true);
+      }, 700);
+    } else {
+      setTimeout(() => {
+        setShowProduct(false);
+      }, 700);
+    }
+  }, [toTop]);
   return (
     <div className={styles.productsContainer} id='productsContainer'>
       <div className={styles.productsHeader}>
         <SectionTitle title='products.title' />
       </div>
-      <CounterLottie />
+      <CounterLottie toTop={toTop} />
       <div className={styles.productsAnimateContainer} ref={productRef}>
         <WrapImage
           desktop={{

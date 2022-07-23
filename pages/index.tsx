@@ -54,7 +54,7 @@ const IndexPage = () => {
   const [showHeader, setShowHeader] = useState(false);
   const lastScrollTop = useRef<number>(0);
   const checkScroll = useRef<boolean>(false);
-  const [toTop, setToTop] = useState(1);
+  const [toTop, setToTop] = useState(-1);
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   const handleScroll = (e: any) => {
     // or window.addEventListener("scroll"....
@@ -114,10 +114,10 @@ const IndexPage = () => {
               </>
             )}
             <VerticalCardsContainer />
-            <Products />
+            <Products toTop={toTop} />
 
             <div className='zalo-app-container'>
-              {width > 800 && <DynamicPhoneCardContainer  toTop={toTop}/>}
+              {width > 800 && <DynamicPhoneCardContainer toTop={toTop} />}
               {width <= 800 && <DynamicPhoneCardContainerMobile />}
               {/* <ZaloDownload selector="zalo-app-download-container" /> */}
             </div>
