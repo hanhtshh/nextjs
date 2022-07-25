@@ -10,7 +10,7 @@
 .productsAnimateContainer {
   display: flex;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   justify-content: center;
   /* transform-style: preserve-3d; */
   height: 80vh;
@@ -70,6 +70,20 @@
   .product4 {
     transform: scale(1.5);
     top: 30px;
+  }
+}
+@media (max-width: 1132px) {
+  .productsAnimateContainer {
+    width: 90%;
+    position: relative;
+    /* overflow: hidden; */
+    justify-content: center;
+    /* transform-style: preserve-3d; */
+    height: 0;
+    padding-bottom: 60%;
+  }
+  .productsContainer {
+    overflow: hidden;
   }
 }
 /* .allProducts {
