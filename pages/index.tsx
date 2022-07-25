@@ -57,28 +57,25 @@ const IndexPage = () => {
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   const handleScroll = (e: any) => {
     // or window.addEventListener("scroll"....
-
-    if (!checkScroll.current) {
-      // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-      var st = e.deltaY;
-      if (st > 0) {
-        setToTop((toTop) => (toTop < 9 ? toTop + 1 : toTop));
-      } else {
-        setToTop((toTop) => (toTop > -1 ? toTop - 1 : toTop));
-      }
-      // For Mobile or negative scrolling
-      checkScroll.current = true;
-      setTimeout(() => {
-        checkScroll.current = false;
-      }, 700);
+    // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    var st = e.deltaY;
+    if (st > 0) {
+      setToTop((toTop) => (toTop < 9 ? toTop + 1 : toTop));
+    } else {
+      setToTop((toTop) => (toTop > -1 ? toTop - 1 : toTop));
     }
+    // For Mobile or negative scrolling
+    window.removeEventListener('wheel', handleScroll);
+    setTimeout(() => {
+      window.addEventListener('wheel', handleScroll);
+    }, 700);
   };
   useEffect(() => {
     if (width > 1132) {
       window.addEventListener('wheel', handleScroll);
     }
     return () => {
-      window.removeEventListener('weel', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
     };
   }, [width]);
 
@@ -97,6 +94,7 @@ const IndexPage = () => {
                 ? {
                     top: `${-toTop * 100}vh`,
                     transition: 'all 700ms ease 0s',
+                    willChange: 'top',
                   }
                 : {}
             }
