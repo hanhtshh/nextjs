@@ -87,8 +87,8 @@ const FixedHeader = ({ toTop }: FixedHeaderProps) => {
       }, 200);
     }
   }, [toTop]);
-  const show2 = state.fixedHeader ? styles.show2 : '';
-  const show = state.showHeader ? styles.show : '';
+  const show2 = '';
+  const show = '';
   return (
     <div className={`${styles.fixedHeaderWrapper}`} ref={headerRef}>
       <div className={`${styles.fixedHeaderContainerBox} ${show} ${show2}`}>
