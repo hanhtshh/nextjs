@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: visible;
   background: hsl(205, 100%, 93%);
 }
 .productsAnimateContainer {
@@ -71,20 +70,6 @@
   .product4 {
     transform: scale(1.5);
     top: 30px;
-  }
-}
-@media (max-width: 1132px) {
-  .productsAnimateContainer {
-    width: 90%;
-    position: relative;
-    /* overflow: hidden; */
-    justify-content: center;
-    /* transform-style: preserve-3d; */
-    height: 0;
-    padding-bottom: 60%;
-  }
-  .productsContainer {
-    overflow: hidden;
   }
 }
 /* .allProducts {

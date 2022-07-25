@@ -9,11 +9,11 @@ const VerticalCardsContainer = () => {
       className={styles.verticalCardsContainer}
       id='vertical-cards-container'
     >
-      <div className={`${styles.oneshopTitleWrapper} one-shop-title-wrapper`}>
+      {/* <div className={`${styles.oneshopTitleWrapper} one-shop-title-wrapper`}>
         <span className={styles.verticalCardsContainerHeader}>
           {T('verticals.title')}
         </span>
-      </div>
+      </div> */}
       <VerticalCards />
     </div>
   );

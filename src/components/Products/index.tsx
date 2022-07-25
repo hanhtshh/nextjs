@@ -46,7 +46,7 @@ const Products = ({ toTop }: ProductsProps) => {
   return (
     <div className={styles.productsContainer} id='productsContainer'>
       <div className={styles.productsHeader}>
-        <SectionTitle title='products.title' />
+        {/* <SectionTitle title='products.title' /> */}
       </div>
       <CounterLottie toTop={toTop} />
       <div className={styles.productsAnimateContainer} ref={productRef}>
