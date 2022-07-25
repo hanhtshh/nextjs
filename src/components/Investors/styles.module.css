@@ -4,7 +4,6 @@
   align-items: center;
   padding: 16px;
   width: 100%;
-  margin-bottom: 140px;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -70,7 +69,6 @@
 
 @media only screen and (min-width: 600px) {
   .investorsSection {
-    margin-bottom: 200px;
     height: auto;
   }
 }
