@@ -8,15 +8,16 @@
   margin-top: 10px;
 }
 .productCardWrapper {
-  transform: translateY(20px);
+  top: 20px;
   display: flex;
   width: 100%;
   position: relative;
   justify-content: center;
+  will-change: top;
   transition: 0.5s;
 }
 .productCardWrapper.show {
-  transform: translateY(0);
+  top: 0;
 }
 
 .ProductCardLabel {

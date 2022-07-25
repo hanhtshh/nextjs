@@ -10,6 +10,7 @@
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   display: block;
   position: relative;
+  will-change: right;
   transition: 0.5s;
 }
 .mobileFrame.show {
